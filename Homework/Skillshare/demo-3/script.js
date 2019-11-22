@@ -51,6 +51,7 @@ console.log(number2);
 //=================================================
 // sting object
 //=================================================
+/*
 
 let human = "John Pepper";
 human.length;
@@ -73,6 +74,92 @@ console.log(human.toLowerCase().endsWith("pepper"));
 console.log(human.slice(0,5));
 console.log(human.slice(-5));
 console.log(human.includes("John"));
+*/
+
+//================================================
+// Template Strings
+//================================================
+
+/*
+let name = "john";
+let age = 25;
+let sentence = `Hey it's ${name} and he's ${age +25}.`;
+//console.log('Hey it"s' + name + ' and he\'s ' + age + ' old');
+//above is disaster way. Avoid
+
+console.log(sentence);
+
+*/
+
+//================================================
+// Array Object
+//================================================
+
+//array === list of values -zero index based
+//objects === collection of values
+
+
+//let zero = [];
+let names = ['john', 'bob','barry','olga', 'ben',1,2,3,4];
+//let names2 = new Array (1,40,60);
+//console.log(names);
+//names[0] = 'peter';
+//console.log(names[0]);
+//console.log(names);
+
+//let person = {
+//    name:'bob'
+//}
+
+//console.log(person.name);
+
+//person.name = 'susy';
+
+//length
+let result = names.length;
+
+console.log(result);
+
+console.log(names[names.length-1]);
+
+//reverse
+//console.log(names.reverse());
+
+//concat
+
+let lastNames = ['pepper', 'onion', 'banana'];
+
+console.log(names.concat(lastNames));
+
+//unshift
+console.log(names.unshift('susy'));
+
+console.log(names);
+
+//shift
+console.log(names.shift());
+console.log(names);
+
+//push 
+console.log(names.push('hello world'));
+console.log(names);
+
+//pop
+console.log(names.pop());
+console.log(names);
+
+//splice
+//console.log(names.splice(2,3));
+//console.log(names);
+
+//sort
+console.log(names.sort());
+console.log(names);
+
+
+
+
+
 
 
 
