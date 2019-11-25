@@ -11,10 +11,24 @@ $(function(){
 
   // $('#btnClick1').click(() => { console.log('Tryckte på knappen');}); //Om man bara ska ha en grej går detta bra
    
-$('#btnClick1').click(() => {
-   $('*').hide();
-});
+//$('#btnClick1').click(() => {
+  // $('*').hide();
+//});
 
+//$('#btnClick1').click(function() {
+ //   $('#content').toggle();
+ //});
+
+ //function hideContent() {
+//     $(this).hide()
+ //}
+
+
+ //$('p').click(function(){
+  //   $(this).hide();
+ //})
+
+$('ul li:last-child').css('color', 'red');
 
 
 }); //RÖR EJ
