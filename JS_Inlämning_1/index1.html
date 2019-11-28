@@ -21,65 +21,64 @@
 
     <!--REG FORM-->
     <div class="container">
-    <form id="regForm">
+    <form id="regForm" class="border border-primary shadow-sm p-3 mb-5 bg-light rounded">
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="firstname">Förnamn:</label>
-                    <input type="text" class="form-control" placeholder="Förnamn">
+                    <input type="text" class="form-control border border-primary" placeholder="Förnamn">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="lastname">Efternamn:</label>
-                    <input type="text" class="form-control" placeholder="Efternamn">
+                    <input type="text" class="form-control border border-primary" placeholder="Efternamn">
                 </div>
            
           
-                <div class="form-group col-md-2">
+                <div class="form-group col-md-3">
                     <label for="firstname">Användarnamn:</label>
-                    <input type="text" class="form-control" placeholder="Användarnamn">
+                    <input type="text" class="form-control border border-primary" placeholder="Användarnamn">
                 </div>
                 <div class="form-group col-md-3">
                     <label for="inputEmail4">E-postadress:</label>
-                    <input type="email" class="form-control" id="inputEmail4" placeholder="E-postadress">
+                    <input type="email" class="form-control border border-primary" id="inputEmail4" placeholder="E-postadress">
                 </div>
 
-                <div class="form-group col-md-2">
-                    <label for="inputPhoneNum">Mobilnummer:</label>
-                    <input type="tel" class="form-control" id="inputPhoneNum" placeholder="Mobilnummer">
+                <div class="form-group col-md-3">
+                    <label for="inputPhoneNum">Mobilnr:</label>
+                    <input type="tel" class="form-control border border-primary" id="inputPhoneNum" placeholder="Mobilnr">
                 </div>
-            
+                <div class="password-box">
                 <div class="form-group col-md-3">
                     <label for="inputPassword4">Lösenord:</label>
-                    <input type="password" class="form-control" id="inputPassword4" placeholder="Lösenord">
+                    <input type="password" class="form-control border border-primary" id="inputPassword4" placeholder="Lösenord">
                 </div>
                 <div class="form-group col-md-3">
                     <label for="inputPassword5">Bekräfta Lösenord:</label>
-                    <input type="password" class="form-control" id="inputPassword5" placeholder="Bekräfta Lösenord">
+                    <input type="password" class="form-control border border-primary" id="inputPassword5" placeholder="Bekräfta Lösenord">
                 </div>
-          
-           
+                </div>
             <div class="form-group col-md-3">
                 <label for="inputAddress">Adress:</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="Gata gatnummer">
+                <input type="text" class="form-control border border-primary" id="inputAddress" placeholder="Gata gatnummer">
             </div>
             <div class="form-group col-md-3">
-                <label for="inputAddress2">Address 2</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Husnummer, våningsnummer">
+                <label for="inputAddress2">Address 2:</label>
+                <input type="text" class="form-control border border-primary" id="inputAddress2" placeholder="Husnummer, våningsnummer">
             </div>
            
            
                 <div class="form-group col-md-1">
-                    <label for="inputZip">Postnummer:</label>
-                    <input type="text" class="form-control" id="inputZip" placeholder="Postnummer">
+                    <label for="inputZip">Postnr:</label>
+                    <input type="text" class="form-control border border-primary" id="inputZip" placeholder="Postnr">
                 </div>
                 <div class="form-group col-md-2">
                     <label for="inputCity">Stad:</label>
-                    <input type="text" class="form-control" id="inputCity" placeholder="Stad">
+                    <input type="text" class="form-control border border-primary" id="inputCity" placeholder="Stad">
                 </div>
                 
           
             <div class="form-group col-md-2">
                     <label for="inputCountry">Land:</label>
-                    <select id="inputCountry" class="form-control">
+                    <select id="inputCountry" class="form-control border border-primary">
                         <option selected>Sverige</option>
                         <option>Norge</option>
                         <option>Finland</option>
@@ -88,34 +87,36 @@
                     </select>
             </div>
             <div class="form-group col-md-3">
-                <label for="exampleFormControlTextarea1">Meddelande</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Dela gärna med dig av dina synpunkter eller önskemål här."></textarea>
+                <label for="regFormTextarea1">Meddelande:</label>
+                <textarea class="form-control border border-primary" id="regFormTextarea1" rows="3" placeholder="Dela gärna med dig av dina synpunkter eller övriga önskemål här."></textarea>
             </div>
             <div class="form-group">
-                <div class="radio-box">
+                <div class="radio-box ml-2">
                     <div class="radio-title">
                         <h5>Nyhetsbrev & Erbjudanden:</h5>
                     </div>
                     <div class="custom-control custom-radio">
                         <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                        <label class="custom-control-label" for="customRadio1">Ja tack skicka nyhetsbrevet till min e-postadress.</label>
+                        <label class="custom-control-label" for="customRadio1">Ja tack, skicka nyhetsbrevet till min epostadress.</label>
                     </div>
                     <div class="custom-control custom-radio">
                         <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                        <label class="custom-control-label" for="customRadio2">Ja tack skicka erbjudanden via SMS.</label>
+                        <label class="custom-control-label" for="customRadio2">Ja tack, skicka erbjudanden via SMS.</label>
                     </div>
                     <div class="custom-control custom-radio">
                         <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
-                        <label class="custom-control-label" for="customRadio3">Ja tack skicka både nyhetsbrev och SMS</label>
+                        <label class="custom-control-label" for="customRadio3">Ja tack, skicka både nyhetsbrev och SMS</label>
                     </div>
                 </div>    
             </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary">SKAPA KONTO</button>
+            <div class="form-group ml-2">
+                <div class="btn-submit-box">
+                    <button type="submit" class="btn btn-primary mt-2 mb-2">SKAPA KONTO</button>
+                </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="gridCheck">
                     <label class="form-check-label" for="gridCheck">
-                        Jag har läst och godkänner<a href="#">köp-och användarvillkoren.</a>
+                     Jag har läst och godkänner<a href="#">köp-och användarvillkoren.</a>
                     </label>
                 </div>
             </div>

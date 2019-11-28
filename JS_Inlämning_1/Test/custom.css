@@ -1,0 +1,8 @@
+
+/* REGISTRATION FORM*/
+@media (min-width: 992px) {
+    #regForm {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+ }
