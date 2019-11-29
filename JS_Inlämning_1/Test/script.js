@@ -1,22 +1,41 @@
 $(function() {
-    $('#regForm').submit((e) => {
-        e.preventDefault();
-
-        validateInput('#firstName');
-        validateInput('#lastName');
-        
-    })
 
     function isEmpty(id) {
         if($(id).val() === '') {
-            $(id).addClass('is-invalid');
-           // $('#firstName > span').removeClass('d-none');
+            $(id).addClass('is-invalid')
+
             $(id).focus();
         } else {
-            $(id).removeClass('is-invalid');
-            $(id).addClass('is-valid');
+            $(id).removeClass('is-invalid')
+            $(id).addClass('is-valid')
         }
-
     }
 
-}); //DO NOT DELETE THIS ONE
+    $('input').keyup(function(e) {
+        let id = "#" + e.currentTarget.id
+        isEmpty(id);
+    });
+
+    function ValidateEmail(email) 
+    {
+     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($('#email').val()))
+      {
+        $('#email').removeClass('is-invalid')
+        $('#email').addClass('is-valid') 
+        return (true)
+      }
+        $('#email').addClass('is-invalid')
+        $('#email').focus();
+        return (false)
+    }
+
+    $('#regForm').submit((e) => {
+        e.preventDefault();
+
+        isEmpty('#firstName');
+        isEmpty('#lastName');
+        ValidateEmail() 
+
+    })
+
+});
