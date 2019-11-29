@@ -1,8 +1,14 @@
+/* CSS Google Font  */
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700');
+/* CSS Google Font end  */
 
-/* REGISTRATION FORM*/
-@media (min-width: 992px) {
-    #regForm {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
- }
+body {
+    background-image: linear-gradient(to top right, #17a2b8, #e694e1);
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+label {
+    font-size: 1.2rem;
+}
+

@@ -12,34 +12,121 @@
 </head>
 <body>
     
-        <nav class="navbar navbar-dark bg-info mb-3">
-                <div class="nav-container">
-                    <span class="navbar-brand mb-0 h1">Membership Registration</span>
+      <!--NAVBAR-->
+    <nav class="navbar navbar-dark bg-info mb-3 text-center">
+      <div class="container">
+          <span class="navbar-brand mb-0"><a href="#" class="text-white">Online Shopping Store Demo</a></span>
+      </div>
+  </nav>  
+
+  <!--REG FORM-->
+<div class="container bg-light rounded mt-5 mb-5 pb-3">
+        <div class="form-text-box">
+            <h1 class="display-5 pt-2 font-weight-bold">Skapa Konto</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet, numquam!</p>
+            <p>Välkommen!</p>
+        </div>
+        <form id="regForm" class="pt-5 pb-5 border border-primary rounded">
+    
+            <div class="form-row d-flex justify-content-around ">
+                <div class="form-group-box-1 col-10 col-md-5">
+                    <div class="form-group">
+                        <label for="fullname">Namn:</label>
+                        <input type="text" class="form-control border border-primary" placeholder="Förnamn Efternamn">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail4">E-post:</label>
+                        <input type="email" class="form-control border border-primary" id="inputEmail4" placeholder="E-postadress">
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="inputPhoneNum">Mobilnr:</label>
+                        <input type="tel" class="form-control border border-primary" id="inputPhoneNum" placeholder="Mobilnr">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword4">Lösenord:</label>
+                        <input type="password" class="form-control border border-primary" id="inputPassword4" placeholder="Lösenord">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword5">Bekräfta Lösenord:</label>
+                        <input type="password" class="form-control border border-primary" id="inputPassword5" placeholder="Bekräfta Lösenord">
+                    </div>
+    
                 </div>
-            </nav>
-        
-            <div class="container">
-                <form id="regForm">
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="firstname">Förnamn:</label>
-                          <input id="firstName" type="text" class="form-control" placeholder="First name">
-                          <div class="invalid-feedback">
-                            Please enter a message in the textarea.
-                          </div>
+                <!--END FORM GROUP BOX-1-->
+                <div class="form-group-box-2 col-10 col-md-5">
+                    <div class="form-group">
+                        <label for="inputAddress">Adress:</label>
+                        <input type="text" class="form-control border border-primary" id="inputAddress" placeholder="Gata gatnummer">
+                    </div>
+                    <div class="form-group d-inline-flex">
+                        <div class="zipcode">
+                            <label for="inputZip">Postnr:</label>
+                            <input type="text" class="form-control border border-primary" id="inputZip" placeholder="Postnr">
                         </div>
-                        <div class="form-group col-md-6">
-                          <input id="lastName" type="text" class="form-control" placeholder="Last name">
-                          <div class="invalid-feedback">
-                            Please enter a message in the textarea.
-                          </div>
+                        <div class="cityname ml-2">
+                            <label for="inputCity">Stad:</label>
+                            <input type="text" class="form-control border border-primary" id="inputCity" placeholder="Stad">
                         </div>
-                        <div class="form-group col-md-6">
-                            <button id="btnSubmit" type="submit" class="btn btn-info">Register</button>
-                          </div>
-                      </div>
-                </form>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="inputCountry">Land:</label>
+                        <select id="inputCountry" class="form-control border border-primary">
+                            <option selected>Sverige</option>
+                            <option>Norge</option>
+                            <option>Finland</option>
+                            <option>Danmark</option>
+                            <option>Island</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="regFormTextarea1">Meddelande:</label>
+                        <textarea class="form-control border border-primary" id="regFormTextarea1" rows="3" placeholder="Dela gärna med dig av eventuella synpunkter här."></textarea>
+                    </div>
+                </div>
+                <!-- END FORM GROUP BOX-2-->
+                <div class="form-group-box-3 d-md-inline-flex justify-content-md-between mt-3 mt-md-5 mr-2 mr-md-0 pl-4 pr-4">
+                    <div class="form-group mr-md-5">
+                        <div class="radio-box ml-2">
+                            <div class="radio-title">
+                                <h5>Nyhetsbrev & Erbjudanden:</h5>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio1" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio1">Ja tack, skicka nyhetsbrevet till min epost.</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio2" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio2">Ja tack, skicka erbjudanden via SMS.</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio3"  class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio3">Ja tack, skicka både nyhetsbrev och SMS</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group ml-md-5">
+                        <div class="btn-submit-box">
+                            <button type="submit" class="btn btn-primary mt-2 mb-2">SKAPA KONTO</button>
+                        </div>
+                        <div class="form-check mt-3 mt-md-3">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">
+                                Jag har läst och godkänner<a href="#" class="d-block pt-1">köp-och användarvillkoren.</a>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!--END FORM GROUP BOX 3-->
             </div>
+            <!--END FORM ROW-->
+    
+        </form>
+        <!--END REG FORM-->
+    </div>
+    <!--END CONTAINER-->
+
 
 
     
