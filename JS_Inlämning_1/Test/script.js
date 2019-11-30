@@ -18,14 +18,14 @@ $(function() {
 
     function ValidateEmail(email) 
     {
-     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($('#email').val()))
+     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($('#inputEmail').val()))
       {
-        $('#email').removeClass('is-invalid')
-        $('#email').addClass('is-valid') 
+        $('#inputEmail').removeClass('is-invalid')
+        $('#inputEmail').addClass('is-valid') 
         return (true)
       }
-        $('#email').addClass('is-invalid')
-        $('#email').focus();
+        $('#inputEmail').addClass('is-invalid')
+        $('#inputEmail').focus();
         return (false)
     }
 
@@ -34,8 +34,14 @@ $(function() {
 
         isEmpty('#firstName');
         isEmpty('#lastName');
+        isEmpty('#inputEmail')
+        isEmpty('#inputPhoneNumber')
+        isEmpty('#inputAddress')
+        isEmpty('#inputPassword')
+     
         ValidateEmail() 
-
+       
+        
     })
 
 });

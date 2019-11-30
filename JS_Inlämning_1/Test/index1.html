@@ -41,7 +41,7 @@
                             <div class="invalid-feedback">Efternamn är obligatoriskt fält!</div>
                         </div>
                     <div class="form-group">
-                        <label for="inputEmail4">E-post:</label>
+                        <label for="inputEmail">E-post:</label>
                         <input id="inputEmail" type="email" class="form-control border border-primary" placeholder="name@domain.com">
                         <div class="invalid-feedback">Felaktig e-postadress!</div>
                     </div>
@@ -54,12 +54,12 @@
                     <div class="form-group">
                         <label for="inputPassword4">Lösenord:</label>
                         <input id="inputPassword" type="password" class="form-control border border-primary" min="8" max="20" placeholder="Lösenord">
-                        <div class="invalid-feedback">Felaktigt lösenord!</div>
+                        <div class="invalid-feedback">Du måste ange ett lösenord!</div>
                     </div>
                     <div class="form-group">
                         <label for="inputPassword5">Bekräfta Lösenord:</label>
                         <input id="inputConfirmPassword" type="password" class="form-control border border-primary" placeholder="Bekräfta Lösenord">
-                        <div class="invalid-feedback">Felaktigt lösenord!</div>
+                        <div class="invalid-feedback">Kontrollera lösenordet!</div>
                     </div>
     
                 </div>
@@ -68,6 +68,7 @@
                     <div class="form-group">
                         <label for="inputAddress">Adress:</label>
                         <input id="inputAddress" type="text" class="form-control border border-primary" placeholder="Gata gatnummer">
+                        <div class="invalid-feedback">Adress är ett obligatoriskt fält!</div>
                     </div>
                     <div class="form-group d-inline-flex">
                         <div class="zipcode">
@@ -121,13 +122,10 @@
                             <button type="submit" class="btn btn-primary mt-2 mb-2">SKAPA KONTO</button>
                         </div>
                         <div class="form-check mt-3 mt-md-3">
-                            <input class="form-check-input" type="checkbox" id="gridCheck">
-                            <label class="form-check-label" for="gridCheck">
-                                Jag har läst och godkänner<a href="#" class="d-block pt-1">köp-och användarvillkoren.</a>
+                            <input class="form-check-input" type="checkbox" id="invalidCheck">
+                            <label class="form-check-label" for="invalidCheck">
+                            Jag har läst och godkänner<a href="#"class="d-block pt-1">köp-och användarvillkoren.</a>
                             </label>
-                            <div class="invalid-feedback">
-                            Du måste godkänna villkoren för att skapa ett konto!
-                            </div>
                         </div>
                     </div>
                 </div>
