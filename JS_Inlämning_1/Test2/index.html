@@ -11,78 +11,136 @@
     <link rel="stylesheet" href="custom.css">
 </head>
 <body>
-    <div class="container">
-        <div class="form-text-box">
-            <h1 class="display-5 pt-2 font-weight-bold">Skapa Konto</h1>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet, numquam!</p>
-            <p>Välkommen!</p>
-        </div>
-        <form id="regForm" class="needs-validation" novalidate>
-            <div class="form-row">
-                <div class="col-md-4 mb-3">
-                    <label for="validationCustom01">Förnamn:</label>
-                    <input type="text" id="validationCustom01" class="form-control" placeholder="Förnamn" required>
-                    <div class="invalid-feedback">Förnamn är ett obligatoriskt fält!</div>
-                    </div>
-                          <div class="col-md-4 mb-3">
-                            <label for="validationCustom02">Efternamn:</label>
-                            <input type="text" id="validationCustom02" class="form-control" placeholder="Efternamn"   required>
-                            <div class="invalid-feedback">Efternamn är ett obligatoriskt fält!</div>
-                          </div>
-
-                          <div class="col-md-4 mb-3">
-                            <label for="validationCustomUsername">Username</label>
-                            <div class="input-group">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroupPrepend">@</span>
-                              </div>
-                              <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                              <div class="invalid-feedback">
-                                Please choose a username.
-                              </div>
-                            </div>
-                          </div>
+ 
+      <!--NAVBAR-->
+      <nav class="navbar navbar-dark bg-info mb-3 text-center">
+          <div class="container">
+              <span class="navbar-brand mb-0"><a href="#" class="text-white">Online Shopping Store Demo</a></span>
+          </div>
+      </nav>  
+    
+      <!--REG FORM-->
+    <div class="container rounded mt-5 mb-5 pb-3">
+            <div class="form-text-box bg-light rounded mb-4">
+                <h1 class="display-5 pt-2 font-weight-bold">Skapa Konto</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet, numquam!</p>
+                <p class="font-weight-bold">Välkommen!</p>
             </div>
-                        <div class="form-row">
-                          <div class="col-md-6 mb-3">
-                            <label for="validationCustom03">Stad:</label>
-                            <input type="text" id="validationCustom03" class="form-control" placeholder="Stad" required>
-                            <div class="invalid-feedback">
-                              Please provide a valid city.
-                            </div>
-                          </div>
-                          <div class="col-md-3 mb-3">
-                            <label for="validationCustom04">State</label>
-                            <select class="custom-select" id="validationCustom04" required>
-                              <option selected disabled value="">Choose...</option>
-                              <option>...</option>
-                            </select>
-                            <div class="invalid-feedback">
-                              Please select a valid state.
-                            </div>
-                          </div>
-                          <div class="col-md-3 mb-3">
-                            <label for="validationCustom05">Zip</label>
-                            <input type="text" class="form-control" id="validationCustom05" required>
-                            <div class="invalid-feedback">
-                              Please provide a valid zip.
-                            </div>
-                          </div>
+            <form id="regForm" class="pt-5 pb-5 border border-primary rounded">
+        
+                <div class="form-row d-flex justify-content-around ">
+                    <div class="form-group-box-1 col-10 col-md-5">
+                        <div class="form-group">
+                            <label for="firstname">Förnamn:</label>
+                            <input id="firstName" type="text" class="form-control border border-primary" placeholder="Förnamn">
+                            <div class="invalid-feedback">Förnamn är obligatoriskt fält!</div>
                         </div>
                         <div class="form-group">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                            <label class="form-check-label" for="invalidCheck">
-                              Agree to terms and conditions
-                            </label>
-                            <div class="invalid-feedback">
-                              You must agree before submitting.
+                                <label for="lastname">Efteramn:</label>
+                                <input id="lastName" type="text" class="form-control border border-primary" placeholder="Efternamn">
+                                <div class="invalid-feedback">Efternamn är obligatoriskt fält!</div>
                             </div>
-                          </div>
+                        <div class="form-group">
+                            <label for="inputEmail">E-post:</label>
+                            <input id="inputEmail" type="email" class="form-control border border-primary" placeholder="name@domain.com">
+                            <div class="invalid-feedback">Felaktig e-postadress!</div>
                         </div>
-                        <button class="btn btn-primary" type="submit">Submit form</button>
-                      </form>
+        
+                        <div class="form-group">
+                            <label for="inputPhoneNum">Mobilnr:</label>
+                            <input id="inputPhoneNumber" type="tel" class="form-control border border-primary" placeholder="07X XXX XX XX">
+                            <div class="invalid-feedback">Du måste ange ditt mobilnummer!</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword">Lösenord:</label>
+                            <input id="inputPassword" type="password" class="form-control border border-primary" placeholder="Lösenord" onkeyup="checkPass()">
+                            <div class="invalid-feedback">Du måste ange ett lösenord!</div>
+                            <div id="notStrong"></div>
+    
+                        
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Bekräfta Lösenord:</label>
+                            <input id="confirmPassword" type="password" class="form-control border border-primary" placeholder="Bekräfta Lösenord" onkeyup="checkPass()">
+                            <div id="invalid-feedback" class="invalid-feedback">Bekräfta lösenordet!</div>
+                        </div>
+        
+                    </div>
+                    <!--END FORM GROUP BOX-1-->
+                    <div class="form-group-box-2 col-10 col-md-5">
+                        <div class="form-group">
+                            <label for="inputAddress">Adress:</label>
+                            <input id="inputAddress" type="text" class="form-control border border-primary" placeholder="Gata gatnummer">
+                            <div class="invalid-feedback">Adress är ett obligatoriskt fält!</div>
+                        </div>
+                        <div class="form-group d-inline-flex">
+                            <div class="zipcode">
+                                <label for="inputZip">Postnr:</label>
+                                <input id="inputZip" type="text" class="form-control border border-primary" placeholder="Postnr">
+                            </div>
+                            <div class="cityname ml-2">
+                                <label for="inputCity">Stad:</label>
+                                <input id="inputCity" type="text" class="form-control border border-primary" placeholder="Stad">
+                            </div>
+                        </div>
+        
+                        <div class="form-group">
+                            <label for="inputCountry">Land:</label>
+                            <select id="inputCountry" class="form-control border border-primary">
+                                <option selected>Sverige</option>
+                                <option>Norge</option>
+                                <option>Finland</option>
+                                <option>Danmark</option>
+                                <option>Island</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="regFormTextarea1">Presentation:</label>
+                            <textarea id="regFormTextarea1" class="form-control border border-primary" rows="3" placeholder="Berätta gärna om dig själv!"></textarea>
+                        </div>
+                    </div>
+                    <!-- END FORM GROUP BOX-2-->
+                    <div class="form-group-box-3 d-md-inline-flex justify-content-md-between mt-3 mt-md-5 mr-2 mr-md-0 pl-4 pr-4">
+                        <div class="form-group mr-md-5">
+                            <div class="radio-box ml-2">
+                                <div class="radio-title">
+                                    <h5>Nyhetsbrev & Erbjudanden:</h5>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio1" name="radioBtn" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio1">Ja tack, skicka nyhetsbrevet till min epost.</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio2" name="radioBtn" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio2">Ja tack, skicka erbjudanden via SMS.</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio3" name="radioBtn" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio3">Ja tack, skicka både nyhetsbrev och SMS</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group ml-md-5">
+                            <div class="btn-submit-box">
+                                <button type="submit" class="btn btn-primary mt-2 mb-2" onclick="inCheck()">SKAPA KONTO</button>
+                            </div>
+                            <div class="form-group form-check mt-3 mt-md-3">
+                                <input class="form-check-input" type="checkbox" id="consentCheck">
+                                <label class="form-check-label" for="consentCheck">
+                                Jag har läst och godkänner<a href="#"class="d-block pt-1 linkStyle">köp-och användarvillkoren.</a>
+                                </label>
+                                <div class="invalid-feedback">Du måste godkänna villkoren för att skapa ett konto!</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--END FORM GROUP BOX 3-->
+                </div>
+                <!--END FORM ROW-->
+        
+            </form>
+            <!--END REG FORM-->
         </div>
+        <!--END CONTAINER-->
               
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
