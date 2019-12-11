@@ -13,20 +13,24 @@
 <body>
  
       <!--NAVBAR-->
-      <nav class="navbar navbar-dark bg-info mb-3 text-center">
-          <div class="container">
-              <span class="navbar-brand mb-0"><a href="#" class="text-white">Online Shopping Store Demo</a></span>
-          </div>
+      <nav class="navbar navbar-dark bg-info mb-3 d-flex justify-content-between text-sm-center text-md-left">
+          
+            
+              <span class="navbar-brand mb-0 "><i class="far fa-snowflake mr-1"></i>Online Shopping Store Demo<i class="far fa-snowflake ml-1"></i>
+                <div class="justify-content-sm-center"><a href="#" class="nav-link font-weight-bold">WINTER SALE! -25%!!!</a></div> 
+            </span>
+             
+          
       </nav>  
     
       <!--REG FORM-->
     <div class="container rounded mt-5 mb-5 pb-3">
-            <div class="form-text-box bg-light rounded mb-4">
+            <div class="form-text-box bg-light rounded mb-4 border border-primary">
                 <h1 class="display-5 pt-2 font-weight-bold">Skapa Konto</h1>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet, numquam!</p>
                 <p class="font-weight-bold">Välkommen!</p>
             </div>
-            <form id="regForm" class="pt-5 pb-5 border border-primary rounded">
+            <form id="regForm" class="pt-5 pb-5 border border-primary rounded bg-light">
         
                 <div class="form-row d-flex justify-content-around ">
                     <div class="form-group-box-1 col-10 col-md-5">
@@ -53,16 +57,16 @@
                         </div>
                         <div class="form-group">
                             <label for="inputPassword">Lösenord:</label>
-                            <input id="inputPassword" type="password" class="form-control border border-primary" placeholder="Lösenord" onkeyup="checkPass()">
-                            <div class="invalid-feedback">Du måste ange ett lösenord!</div>
-                            <div id="notStrong"></div>
+                            <input id="inputPassword" type="password" class="form-control border border-primary" placeholder="Lösenord">
+                            <div id="notStrong" class="invalid-feedback"><p>Du måste ange ett lösenord!</p></div>
+                            
     
                         
                         </div>
                         <div class="form-group">
                             <label for="confirmPassword">Bekräfta Lösenord:</label>
-                            <input id="confirmPassword" type="password" class="form-control border border-primary" placeholder="Bekräfta Lösenord" onkeyup="checkPass()">
-                            <div id="invalid-feedback" class="invalid-feedback">Bekräfta lösenordet!</div>
+                            <input id="confirmPassword" type="password" class="form-control border border-primary" placeholder="Bekräfta Lösenord">
+                            <div class="invalid-feedback">Bekräfta lösenordet!</div>
                         </div>
         
                     </div>
@@ -77,10 +81,12 @@
                             <div class="zipcode">
                                 <label for="inputZip">Postnr:</label>
                                 <input id="inputZip" type="text" class="form-control border border-primary" placeholder="Postnr">
+                                <div class="invalid-feedback">Ange ditt postnummer!</div>
                             </div>
                             <div class="cityname ml-2">
                                 <label for="inputCity">Stad:</label>
                                 <input id="inputCity" type="text" class="form-control border border-primary" placeholder="Stad">
+                                <div class="invalid-feedback">Ange din stad!</div>
                             </div>
                         </div>
         
@@ -122,12 +128,12 @@
                         </div>
                         <div class="form-group ml-md-5">
                             <div class="btn-submit-box">
-                                <button type="submit" class="btn btn-primary mt-2 mb-2" onclick="inCheck()">SKAPA KONTO</button>
+                                <button type="submit" class="btn btn-primary mt-2 mb-2" >SKAPA KONTO</button>
                             </div>
                             <div class="form-group form-check mt-3 mt-md-3">
-                                <input class="form-check-input" type="checkbox" id="consentCheck">
+                                <input class="form-check-input" type="checkbox" id="consentCheck" onclick="inCheck()">
                                 <label class="form-check-label" for="consentCheck">
-                                Jag har läst och godkänner<a href="#"class="d-block pt-1 linkStyle">köp-och användarvillkoren.</a>
+                                Jag har läst och godkänner<a href="#" class="d-block pt-1 link-style">köp-och användarvillkoren.</a>
                                 </label>
                                 <div class="invalid-feedback">Du måste godkänna villkoren för att skapa ett konto!</div>
                             </div>
@@ -139,8 +145,15 @@
         
             </form>
             <!--END REG FORM-->
+
+            <div id="accountCheck" class="d-flex justify-content-center mt-4">
+                    <p class="pr-1">Har du redan ett konto?</p>
+                    <a href="#">logga in</a>
+        
+                </div>
         </div>
         <!--END CONTAINER-->
+   
               
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

@@ -18,6 +18,17 @@ label {
     padding: 1rem;
 }
 
-.linkStyle {
+.link-style {
+    color:#000;
+}
+.nav-link {
     color:#fff;
+}
+
+#accountCheck {
+    font-size: 1rem;
+}
+
+#accountCheck a {
+    color: #fff;
 }

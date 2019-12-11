@@ -31,9 +31,9 @@ $(function() {
 
     function passLength(){
         let passLength = document.getElementById('inputPassword');
-        let badColor = "#DC3545";
-        let fontSize = "11.2px";
-        let notStrong = $('#notStrong');
+        // let badColor = "#DC3545";
+        // let fontSize = "11.2px";
+        // let notStrong = $('#notStrong');
 
         if(passLength.value.length >= 8 ) {
             $('#inputPassword').addClass('is-valid')
@@ -42,29 +42,30 @@ $(function() {
             
         } else {
             $('#inputPassword').removeClass('is-valid')
-            notStrong.css('color', badColor, 'font-size', fontSize).html("Lösenordet måste vara minst 8 tecken långt.");
+            let notStrong = document.getElementById('notStrong')
+            // notStrong.css('color', badColor, 'font-size', fontSize).html("Lösenordet måste vara minst 8 tecken långt.");
             
-            return(false)
+            return($("#notStrong").html("Lösenordet måste vara minst 8 tecken långt!"));
 
         }
     }
-   function checkPass() {
-       let password = document.getElementById('inputPassword');
-       let confirm = document.getElementById('confirmPassword');
-       if(password.value == confirm.value && password.value !='') {
-        $('#confirmPassword').removeClass('is-invalid')
-           $('#confirmPassword').addClass('is-valid')
-           return(true)
-       }else {
-        $('#confirmPassword').removeClass('is-valid')
-        $('#confirmPassword').addClass('is-invalid')
-        return(false)
-       }
-   }
+//    function checkPass() {
+//        let password = regForm.inputPassword.value;
+//        let confirm = regForm.confirmPassword.value;
+//        if(password.value == confirm.value) {
+//         $('#confirmPassword').removeClass('is-invalid')
+//            $('#confirmPassword').addClass('is-valid')
+//            return(true)
+//        }else {
+//         $('#confirmPassword').removeClass('is-valid')
+//         $('#confirmPassword').addClass('is-invalid')
+//         return(false)
+//        }
+//    }
 
    function inCheck() {
     let inCheck = document.getElementById('consentCheck');
-       if(inCheck == checked){
+       if(consentCheck.checked == true){
            $('#consentCheck').removeClass('is-invalid')
            $('#consentCheck').addClass('is-valid')
            return(true)
@@ -84,11 +85,14 @@ $(function() {
         isEmpty('#inputAddress')
         isEmpty('#inputPassword')
         isEmpty('#confirmPassword')
+        isEmpty('#inputCity')
+        isEmpty('#inputZip')
+        //isEmpty('#consentCheck')
 
         ValidateEmail() 
         passLength()
         checkPass()
-        inCheck()
+        inCheck('#consentCheck')
         
     })
 
