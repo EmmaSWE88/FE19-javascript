@@ -11,11 +11,6 @@ $(function() {
         }
     }
 
-    $('input').keyup(function(e) {
-        let id = "#" + e.currentTarget.id
-        isEmpty(id);
-    });
-
     function ValidateEmail(email) 
     {
      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($('#inputEmail').val()))
@@ -29,15 +24,8 @@ $(function() {
         return (false)
     }
 
-    function noProblem() {
-        let loginUser = document.getElementById('inputEmail1');
-        let loginUserPassword = document.getElementById('loginPassword');
-        if(loginUser == true && loginUserPassword == true){
-           window.location.replace = ("loginthanku.html");
-        } else {
-                alert('nått gick fel');
-            }
-    }
+    
+
 
     $('#loginForm').submit((e) => {
         e.preventDefault();
@@ -47,15 +35,19 @@ $(function() {
         ValidateEmail(email) 
         noProblem() 
 
-        // let writeToDatabaseCompleted = false;
+        function noProblem (input){
+            let value = $(input).val();
+            
+            if(value.length < 0 ) {
+                $(id).addClass('is-invalid')
+                $(id).removeClass('is-valid') 
+                return (true)
+            } else {
+                window.location.replace("loginthanku.html");
+                return(false)
+            }
+        }
 
-        // if(!writeToDatabaseCompleted) {
-        //     return false
-        //    window.location.replace("http://stackoverflow.com");
-        // }else {
-        //     alert('nått gick fel');
-        // }
-    
     })
 
 }); //RÖR EJ

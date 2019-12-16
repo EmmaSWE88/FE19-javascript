@@ -3,6 +3,7 @@ $(function(){
     function isEmpty(id) {
         if($(id).val() === '') {
             $(id).addClass('is-invalid');
+            $(id).removeClass('is-valid');
            // $('#firstName > span').removeClass('d-none');
             $(id).focus();
         } else {
@@ -23,6 +24,10 @@ $(function(){
 
         validateInput('#firstName');
         validateInput('#lastName');
+        
+        
+        isEmpty('#firstName');
+        isEmpty('#lastName');
         
     })
 
