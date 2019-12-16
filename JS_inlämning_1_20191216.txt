@@ -91,3 +91,9 @@ function noProblem (input){
                 return(false)
             }
         }
+=================================================================
+
+  document.getElementById('loginBtn').onclick = function() {noProblem};
+        function noProblem() {
+            window.location.replace("loginthanku.html");  
+        }

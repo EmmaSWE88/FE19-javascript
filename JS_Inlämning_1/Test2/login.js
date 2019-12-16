@@ -25,29 +25,41 @@ $(function() {
     }
 
     
+    // function noProblem (){
+    //     let value = $(input).val();
+        
+    //     if(value.length > 0 ) {
+    //         window.location.replace("loginthanku.html");
+    //         return(true)
+    //     } else {
+    //         $(input).addClass('is-invalid')
+    //         $(input).removeClass('is-valid') 
+    //         return (false)   
+    //     }
+    // }
 
-
-    $('#loginForm').submit((e) => {
+  function noProblem(){
+    if($('#inputEmail1').val() > 0 && $('#loginPassword').val() > 0 ) {
+        window.location.replace("loginthanku.html");
+        return(true)
+    } else {
+        // $(id).addClass('is-invalid')
+        // $(id).removeClass('is-valid') 
+        alert('Nått gick fel');
+        return (false)   
+    }
+  }
+   
+  $('#loginForm').submit((e) => {
         e.preventDefault();
 
         isEmpty('#inputEmail1')
         isEmpty('#loginPassword')
         ValidateEmail(email) 
-        noProblem() 
-
-        function noProblem (input){
-            let value = $(input).val();
-            
-            if(value.length < 0 ) {
-                $(id).addClass('is-invalid')
-                $(id).removeClass('is-valid') 
-                return (true)
-            } else {
-                window.location.replace("loginthanku.html");
-                return(false)
-            }
-        }
-
+        noProblem()
+        
+        
     })
 
+  
 }); //RÖR EJ
