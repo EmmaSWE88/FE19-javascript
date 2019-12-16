@@ -32,10 +32,11 @@ $(function() {
     function noProblem() {
         let loginUser = document.getElementById('inputEmail1');
         let loginUserPassword = document.getElementById('loginPassword');
-        if(loginUser && loginUserPassword == true){
-           window.location = ("loginthanku.html");
-           return (false)
-        }
+        if(loginUser == true && loginUserPassword == true){
+           window.location.replace = ("loginthanku.html");
+        } else {
+                alert('nått gick fel');
+            }
     }
 
     $('#loginForm').submit((e) => {
@@ -44,8 +45,16 @@ $(function() {
         isEmpty('#inputEmail1')
         isEmpty('#loginPassword')
         ValidateEmail(email) 
-        noProblem()   
-        
+        noProblem() 
+
+        // let writeToDatabaseCompleted = false;
+
+        // if(!writeToDatabaseCompleted) {
+        //     return false
+        //    window.location.replace("http://stackoverflow.com");
+        // }else {
+        //     alert('nått gick fel');
+        // }
     
     })
 
