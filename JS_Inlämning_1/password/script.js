@@ -11,32 +11,44 @@ $(function() {
         }
     }
 
-    // function validPassword (){
+    $('input').keyup(function(e) {
+        let id = "#" + e.currentTarget.id
+        isEmpty(id);
+    });
 
-    // }
-
-    function checkPassword () {
+    function passStrong(){
+            let passStrong = document.getElementById('inputPassword').value;
+            let notStrong = document.getElementById('notStrong');
+            if(passStrong.value.length = 0 ) {
+                $('#inputPassword').removeClass('is-valid')
+                $('#inputPassword').addClass('is-invalid')
+                return(false)   
+            } 
+            if(passStrong.value.length > 0 && passStrong.value.length < 8 ) {
+                $('#inputPassword').removeClass('is-valid')
+                $('#inputPassword').addClass('is-invalid')
+                $('#notStrong').innerHTML("Lösenordet måste vara minst 8 tecken långt!")
+                return(false)
+                
+            } 
+            else{
+                $('#inputPassword').addClass('is-valid')
+                $('#inputPassword').removeClass('is-invalid')
+                return(true)
+            }
+            
+        };
         
-            var res; 
-            var str = 
-                document.getElementById(id).value; 
-            if (str.match(/[a-z]/g) && str.match( 
-                    /[A-Z]/g) && str.match( 
-                    /[0-9]/g) && str.match( 
-                    /[^a-zA-Z\d]/g) && str.length >= 8) 
-                res = "TRUE"; 
-            else 
-                res = "FALSE"; 
-            document.getElementById(id).value = res; 
 
-    }
 
-    $('#regForm').submit((e) => {
-        e.preventDefault();
+        $('#regForm').submit((e) => {
+            e.preventDefault();
 
-        isEmpty('#inputPassword');
-
-    })
+            isEmpty('#inputPassword')
+            isEmpty('#confirmPassword')
+            passStrong()
+    
+        })
     
 }); //rör ej
 

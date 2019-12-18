@@ -29,30 +29,23 @@ $(function() {
         return (false)
     }
 
-    // function checkPassword (){
-    // }
+        $("#inputPassword").blur(function passLength(){
+            let passLength = document.getElementById('inputPassword');
+            if(passLength.value.length >= 1 && passLength.value.length < 8 ) {
+                $('#inputPassword').removeClass('is-valid')
+                $('#inputPassword').addClass('is-invalid')
+                
+                return($("#notStrong").html("Lösenordet måste vara minst 8 tecken långt!"))
+                
+            } 
+            else{
+                $('#inputPassword').addClass('is-valid')
+                $('#inputPassword').removeClass('is-invalid')
+                return(true)
+            }
+        });
+        
 
-
-    $("#inputPassWord").keyup(function passLength(){
-        let passLength = document.getElementById('inputPassword');
-        // let badColor = "#DC3545";
-        // let fontSize = "11.2px";
-         let notStrong = $('#notStrong');
-
-        if(passLength.value.length > 8 ) {
-            $('#inputPassword').addClass('is-valid')
-            $('#inputPassword').removeClass('is-invalid')
-            return(true)
-            
-        } else {
-            $('#inputPassword').removeClass('is-valid')
-            let notStrong = document.getElementById('notStrong')
-            // notStrong.css('color', badColor, 'font-size', fontSize).html("Lösenordet måste vara minst 8 tecken långt.");
-            
-            return($("#notStrong").html("Lösenordet måste vara minst 8 tecken långt!") + $('#inputPassword').addClass('is-invalid'));
-
-        }
-    });
 //    function checkPass() {
 //        let password = regForm.inputPassword.value;
 //        let confirm = regForm.confirmPassword.value;
@@ -91,13 +84,14 @@ $(function() {
         isEmpty('#confirmPassword')
         isEmpty('#inputCity')
         isEmpty('#inputZip')
-        //isEmpty('#consentCheck')
+        isEmpty('#inputCountry')
+       
 
         ValidateEmail() 
         passLength()
-        checkPassword()
+        // checkPassword('#inputPassword')
         inCheck('#consentCheck')
-        
+
     })
 
 });

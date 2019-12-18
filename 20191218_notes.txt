@@ -1,0 +1,135 @@
+ Prova att göra en switch case .blur och så kan den kolla alla fält INNAN
+den submittar!
+
+===========================================================================
+
+<span id="userProfileName"class="nav-profile-name">Don Richards</span>
+ <h4 id="welcomeUser" class="mt-1 mb-1">Hi User, Welcomeback!</h4>
+
+ let userProfileName = document.getElementById('userProfileName');
+ let welcomeUser = document.getElementById('welcomeUser');
+
+till users = res.text
+till de andra apierna = res.json
+
+spara till localstorage/sessions så bör den visa rätt info
+
+https://inlupp-fa.azurewebsites.net/api/users?firstname=Emma&lastname=Norling
+
+
+function getFullName(firstname, lastname) {
+    fetch(`https://inlupp-fa.azurewebsites.net/api/users?firstname=${firstname}&lastname=${lastname}`)
+    .then(res => res.text())
+    .then(data => {
+        // Check browser support
+    if (typeof(Storage) !== "undefined") {
+    // Store
+    localStorage.setItem("firstname", "Emma");
+    localStorage.setItem("lastname", "Smith");
+    // Retrieve
+    document.getElementById("userProfileName").innerHTML = localStorage.getItem("lastname");
+    document.getElementById("userProfileName").innerHTML = localStorage.getItem("firstname");
+  } else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+  }
+})
+
+getFullName('Hans', 'ML');
+
+
+} //END function getFullName
+================================================================
+// // function validPassword (){
+
+    // // }
+
+    // function checkPassword () {
+        
+    //         var res; 
+    //         var str = 
+    //             document.getElementById(id).value; 
+    //         if (str.match(/[a-z]/g) && str.match( 
+    //                 /[A-Z]/g) && str.match( 
+    //                 /[0-9]/g) && str.match( 
+    //                 /[^a-zA-Z\d]/g) && str.length >= 8) 
+    //             res = "TRUE"; 
+    //         else 
+    //             res = "FALSE"; 
+    //         document.getElementById(id).value = res; 
+
+    // }
+
+        // function passStrong(){
+        //     let passStrong = document.getElementById('inputPassword');
+
+        //     if(passStrong.value.length = 0 ) {
+        //         $('#inputPassword').removeClass('is-valid')
+        //         $('#inputPassword').addClass('is-invalid')
+        //         return(false)   
+        //     } 
+        //    if(passStrong.value.length >= 1 && passStrong.value.length < 8 ) {
+        //         $('#inputPassword').removeClass('is-valid')
+        //         $('#inputPassword').addClass('is-invalid')
+                
+        //         return($("#notStrong").html("Lösenordet måste vara minst 8 tecken långt!"))
+                
+        //     } 
+        //     else{
+        //         $('#inputPassword').addClass('is-valid')
+        //         $('#inputPassword').removeClass('is-invalid')
+        //         return(true)
+        //     }
+            
+        // };
+============================================================
+// $("#inputPassword").blur(
+        function passLength(){
+        let passLength = document.getElementById('inputPassword');
+        // let badColor = "#DC3545";
+        // let fontSize = "11.2px";
+        //  let notStrong = $('#notStrong');
+
+        // if(passLength.value.length = 0 ) {
+        //     $('#inputPassword').removeClass('is-valid')
+        //     $('#inputPassword').addClass('is-invalid')
+        //     return(false)   
+        // } 
+       if(passLength.value.length >= 1 && passLength.value.length < 8 ) {
+            $('#inputPassword').removeClass('is-valid')
+            $('#inputPassword').addClass('is-invalid')
+            
+            return($("#notStrong").html("Lösenordet måste vara minst 8 tecken långt!"))
+            
+        } 
+        else{
+            $('#inputPassword').addClass('is-valid')
+            $('#inputPassword').removeClass('is-invalid')
+            return(true)
+        }
+        
+    };
+===============================================================================
+let passLength = document.getElementById('inputPassword');
+        // let badColor = "#DC3545";
+        // let fontSize = "11.2px";
+        //  let notStrong = $('#notStrong');
+
+        // if(passLength.value.length = 0 ) {
+        //     $('#inputPassword').removeClass('is-valid')
+        //     $('#inputPassword').addClass('is-invalid')
+        //     return(false)   
+        // } 
+       if(passLength.value.length >= 1 && passLength.value.length < 8 ) {
+            $('#inputPassword').removeClass('is-valid')
+            $('#inputPassword').addClass('is-invalid')
+            
+            return($("#notStrong").html("Lösenordet måste vara minst 8 tecken långt!"))
+            
+        } 
+        else{
+            $('#inputPassword').addClass('is-valid')
+            $('#inputPassword').removeClass('is-invalid')
+            return(true)
+        }
+        
+    };

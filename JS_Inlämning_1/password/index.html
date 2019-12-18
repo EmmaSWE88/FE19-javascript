@@ -13,20 +13,28 @@
 <body>
 
 
-<form id="regForm">
+    <form id="regForm" class="pt-5 pb-5 border border-primary rounded bg-light col-10 col-md-5">
 
-<div class="form-group">
-    <label for="password">Password</label>
-    <input type="password" id="inputPassword" placeholder="Lösenord">
-    <div class="invalid-feedback">Lösenord är obligatoriskt fält!</div>
-</div>
-<div class="form-group">
-        <label for="confirmPassword">Confirm Password</label>
-        <input type="password" id="confirmPassword" placeholder="Bekräfta Lösenord">
-        <div class="invalid-feedback">Bekräfta lösenordet!</div>
-        <button type="submit">logga in</button>
-</div>
+        <div class="form-group col-10 col-md-5">
+            <label for="inputPassword">Lösenord:</label>
+            <input id="inputPassword" type="password" class="form-control border border-primary" placeholder="Lösenord">
+            <div id="notStrong" class="invalid-feedback"><p>Du måste ange ett lösenord!</p></div>
+            
 
+        
+        </div>
+        <div class="form-group col-10 col-md-5">
+            <label for="confirmPassword">Bekräfta Lösenord:</label>
+            <input id="confirmPassword" type="password" class="form-control border border-primary" placeholder="Bekräfta Lösenord">
+            <div class="invalid-feedback">Bekräfta lösenordet!</div>
+        </div>
+
+    </div>
+    <div class="form-group ml-md-5">
+        <div class="btn-submit-box">
+            <button type="submit" class="btn btn-primary mt-2 mb-2" >SKAPA KONTO</button>
+        </div>
+    </div>
 </form>
 
 

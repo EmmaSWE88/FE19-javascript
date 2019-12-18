@@ -30,7 +30,7 @@
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet, numquam!</p>
                 <p class="font-weight-bold">Välkommen!</p>
             </div>
-            <form id="regForm" class="pt-5 pb-5 border border-primary rounded bg-light">
+            <form id="regForm" class="pt-5 pb-5 border border-primary rounded bg-light" onsubmit="return formValidated()">
         
                 <div class="form-row d-flex justify-content-around ">
                     <div class="form-group-box-1 col-10 col-md-5">
@@ -92,13 +92,15 @@
         
                         <div class="form-group">
                             <label for="inputCountry">Land:</label>
-                            <select id="inputCountry" class="form-control border border-primary">
-                                <option selected>Sverige</option>
-                                <option>Norge</option>
-                                <option>Finland</option>
-                                <option>Danmark</option>
-                                <option>Island</option>
+                            <select id="inputCountry" class="custom-select border border-primary">
+                                <option value="">Välj Land</option>
+                                <option value="Sverige">Sverige</option>
+                                <option value="Norge">Norge</option>
+                                <option value="Finland">Finland</option>
+                                <option value="Danmark">Danmark</option>
+                                <option value="Island">Island</option>
                             </select>
+                            <div class="invalid-feedback">Ange ditt land!</div>
                         </div>
                         <div class="form-group">
                             <label for="regFormTextarea1">Presentation:</label>
@@ -148,7 +150,7 @@
 
             <div id="accountCheck" class="d-flex justify-content-center mt-4">
                     <p class="pr-1">Har du redan ett konto?</p>
-                    <a href="#">logga in</a>
+                    <a href="login.html">logga in</a>
         
                 </div>
         </div>

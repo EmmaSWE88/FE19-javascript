@@ -48,17 +48,17 @@ getFullName('Hans', 'ML');
 /* ======================================================================= */
 /* MESSAGES START */ 
 
-const messages = document.getElementById('messages');
+const messages = document.getElementById('messageOne');
 
-fetch('http://inlupp-fa.azurewebsites.net/api/messages')
+fetch('https://inlupp-fa.azurewebsites.net/api/messages')
 .then(res => res.json())
 .then(data => {
 
     for(message of data) {
 
-        messages.insertAdjacentHTML('beforeend', `
+        messages.insertAdjacentHTML('afterbegin', `
             <a>
-                <p>${message.from}</p>
+                <p>The meeting is NOT cancelled.</p>
                 <p>${message.title}</p>
             </a>
         `); 
