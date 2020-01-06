@@ -1,6 +1,9 @@
  Prova att göra en switch case .blur och så kan den kolla alla fält INNAN
 den submittar!
 
+adobe XD
+photoshop CS (gratis version)
+scetchup
 ===========================================================================
 
 <span id="userProfileName"class="nav-profile-name">Don Richards</span>
