@@ -110,7 +110,7 @@
 //==============================================================================================================
 //==============================================================================================================
  
-//Kolla om det är tomt
+//Kolla om det är tomt i nått fält
 $(function(){
     function isEmpty(id) {
         if($(id).val() === '') {
@@ -171,6 +171,7 @@ $(function(){
 
        
 }
+//Kolla om checkboxen är checkad
     function inCheck() {
     let checkComp = document.getElementById('consentCheck');
        if(checkComp.checked == true){
@@ -184,6 +185,7 @@ $(function(){
        }
    }
 
+   //Kolla om radio-button är i klickad
    function radioCheck() {
     let radioComp = document.getElementById('customRadio1');
        if(radioComp.checked == true){
