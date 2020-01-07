@@ -5,11 +5,12 @@ $(function(){
         if($(id).val() === '') {
             $(id).addClass('is-invalid')
             $(id).removeClass('is-valid')
-            
+            return(false)
             
         } else {
             $(id).removeClass('is-invalid')
             $(id).addClass('is-valid')
+            return(true)
         }
     }
 
@@ -28,14 +29,14 @@ $(function(){
         return (true)
       }
         $('#inputEmail').addClass('is-invalid')
-        $('#inputEmail').focus();
+        $('#inputEmail').removeClass('is-valid');
         return (false)
     }
 
   
  //Teckenlängd på lösenord
     function checkPassStrength() {
-    let longPassw = document.getElementById('inputPassword');
+    let longPassw = document.getElementById('inputPassword').value;
     if(longPassw.length >= 8) {
         $('#inputPassword').addClass('is-valid')
         $('#inputPassword').removeClass('is-invalid')
@@ -43,8 +44,8 @@ $(function(){
       } else {
         $('#inputPassword').addClass('is-invalid')
         $('#inputPassword').removeClass('is-valid')
-        return(false
-        )}
+        return(false)
+    }
     
     }
     //Matcha lösenorden
@@ -69,6 +70,7 @@ $(function(){
        if(checkComp.checked == true){
            $('#consentCheck').removeClass('is-invalid')
            $('#consentCheck').addClass('is-valid')
+           return(true)
            
        } else {
         $('#consentCheck').addClass('is-invalid')
@@ -82,7 +84,7 @@ $(function(){
     let radioComp1 = document.getElementById('customRadio1');
     let radioComp2 = document.getElementById('customRadio2');
     let radioComp3 = document.getElementById('customRadio3');
-       if(radioComp1.checked | radioComp2.checked | radioComp3.checked){
+       if(radioComp1.checked || radioComp2.checked || radioComp3.checked){
            $('#customRadio1').removeClass('is-invalid')
            $('#customRadio1').addClass('is-valid')
            return(true)
@@ -115,7 +117,22 @@ $(function(){
         inCheck();
         radioCheck();
 
-        if(isEmpty('#firstName')&& isEmpty('#lastName') && isEmpty('#inputEmail') && isEmpty('#inputPhoneNumber') && isEmpty('#inputAddress') && isEmpty('#inputPassword') && isEmpty('#confirmPassword') && isEmpty('#inputCity') && isEmpty('#inputZip') && isEmpty('#inputCountry') && isEmpty('#regFormTextarea1') &&  checkPassStrength() && validatePass() && inCheck() && radioCheck() == true) {
+        if(isEmpty('#firstName')&& 
+        isEmpty('#lastName') && 
+        isEmpty('#inputEmail') && 
+        isEmpty('#inputPhoneNumber') && 
+        isEmpty('#inputAddress') && 
+        isEmpty('#inputPassword') && 
+        isEmpty('#confirmPassword') && 
+        isEmpty('#inputCity') &&
+        isEmpty('#inputZip') && 
+        isEmpty('#inputCountry') && 
+        isEmpty('#regFormTextarea1') &&  
+        checkPassStrength() && 
+        validatePass() && 
+        inCheck() && 
+        radioCheck()) {
+            console.log('aaaaa')
             window.location.replace('index2.html')
         } else {
             return(false)
