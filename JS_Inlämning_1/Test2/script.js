@@ -109,29 +109,8 @@
 
 //==============================================================================================================
 //==============================================================================================================
-//BOOTSTRAP EXAMPLE
-// Disable form submissions if there are invalid fields
-// (function() {
-//     'use strict';
-//     window.addEventListener('load', function() {
-//       // Get the forms we want to add validation styles to
-//       let forms = document.getElementsByClassName('needs-validation');
-//       // Loop over them and prevent submission
-//       let validation = Array.prototype.filter.call(forms, function(form) {
-//         form.addEventListener('submit', function(event) {
-//           if (form.checkValidity() === false) {
-//             event.preventDefault();
-//             event.stopPropagation();
-//           }
-//           form.classList.add('was-validated');
-//         }, false);
-//       });
-//     }, false);
-
-//   })();
-//==============================================================================================================
-//==============================================================================================================  
-
+ 
+//Kolla om det är tomt
 $(function(){
     function isEmpty(id) {
         if($(id).val() === '') {
@@ -150,6 +129,7 @@ $(function(){
         isEmpty(id);
     });
 
+    //Formel för epost-address
     function ValidateEmail(email) 
     {
      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($('#inputEmail').val()))
@@ -163,6 +143,7 @@ $(function(){
         return (false)
     }
 
+    //teckenlängd på lösenord
     function checkPassStrength() {
     let passStrength = document.getElementById('inputPassword');
     if(passStrength.value.length >= 8) {
@@ -174,13 +155,15 @@ $(function(){
       }
     
     }
-    function validatePass() { //att matcha lösenorden funkar inte
+
+    //Matcha lösenorden
+    function validatePass() { 
         let password = document.getElementById('inputPassword').value;
         let confirmPassword = document.getElementById('confirmPassword').value;
         if (password != confirmPassword) {
             $('#confirmPassword').addClass('is-invalid')
-            document.getElementById('conPassP').innerText = ("Du har inte repeterat samma lösenord!");
             $('#confirmPassword').removeClass('is-valid')
+            alert("Du har inte repeterat samma lösenord!");
             return (false);
         } else {
             return (true);
