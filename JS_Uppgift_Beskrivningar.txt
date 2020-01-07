@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Inlämningsuppgift 1 - validering av formulär
 
 Du ska i denna inlämningsuppgift bygga upp ett registreringsformulär och ett inloggningsformulär. Sedan ska denna information valideras så att rätt information matas in. 
@@ -50,3 +51,57 @@ https://inlupp-fa.azurewebsites.net/api/updates
 https://inlupp-fa.azurewebsites.net/api/users
 
 OBS! vissa av api-länkarna kanske inte funkar. Hittar man en sån så kontakta Hans så fixar han dem.
+=======
+Inlämningsuppgift 1 - validering av formulär
+
+Du ska i denna inlämningsuppgift bygga upp ett registreringsformulär och ett inloggningsformulär. Sedan ska denna information valideras så att rätt information matas in. 
+Registreringsformuläret ska innehålla information som kan vara visentlig vid en registrering. Du får själv välja vad för fält som ska vara med i registreringsformuläret men följande html-element ska i alla fall vara med och valideras etc. Du ska göra valideringen genom javascript/jquery.
+•	input:text
+•	input:password
+•	input:radio
+•	input:checkbox
+•	select
+•	textarea
+•	button:submit
+Inloggningsformuläret ska innehålla ett fält för e-post och lösenord. Dessa html-element ska vara rätt anpassade för ändamålet. Valideringen ska återigen göras med hjälp av javascript/jquery. 
+Du ska validera formulären och samtliga fält som du har med. Detta ska göras med hjälp av javascript eller Jquery vilket du känner passar bäst och ske innan formuläret skickas iväg till databasen eller annat (du behöver inte ta hand om informationen och spara in det i en databas). När formuläret har blivit godkänt vid valideringen ska du komma till en annan valfri sida som tackar för registreringen eller talar om att du är inloggad.
+Du måste tänka på hur du vill att formulären ska valideras och vad som kan tänkas behöva valideras. All nödvändig information ska valideras. Du ska även se till att på ett användarvänligt och snyggt sätt förmedla felmeddelanden till slutanvändaren så att den lätt förstår vilka fält som är fel och vad som krävs för att det ska bli godkänt. Du får använda dig av Bootstrap för att lösa det grafiska om du så vill. 
+All denna information ska publiceras i din egna GitHub och använda sig av Source Control (Git). du ska sedan lämna in ett dokument här på pingpong med en länk till din github repository som jag kan komma åt och granska din kod. 
+Inlämningen av denna uppgift ska ske sista dagen för kursen. Gärna tidigare.
+====================================================================================================0
+Javascript Uppgift 2 – Admin-portal med webapi
+
+I denna inlämningsuppgift ska du hämta information från olika webapi:er och publicera informationen på en redan färdig admin portal sida. Sidan har idag statisk information. Denna information ska du göra om så att sidan hämtar sin information från webapierna istället. Du kommer behöva ändra både behöva göra ändringar för HTML-koden och för JS-koden för att få det hela att fungera. Alla boxar/delar på sidan ska vara kopplat till ett webapi i slutändan. Du får inte ändra hemsidans grafiska layout på något sätt utan sidan ska se likadan ut som tidigare. 
+Denna inlämningsuppgift ska lämnas in genom att du publicerar admin-portalen på din egna github och sedan skickar du in din github-länk under denna inlämningsuppgift. Uppgiften ska senast vara inlämnad den 12:e januari 2020.
+För godkänt på uppgiften ska du ha klarat av att föra in information på följande delar: 
+messages,
+ notifications, 
+total-growth,
+total-sales,
+total-purchases, 
+total-users, 
+total-projects, 
+total-sales-chart, 
+downloads 
+samt users (namnet uppe i navigeringen och i välkomstmeddelandet)
+För väl godkänt ska du ha klarat av att föra in information från samtliga webapi delar.
+Här är följande webapi-länkar som du kan hämta ut informationen ifrån (de kan se och vara uppbyggda på lite olika sätt):
+https://inlupp-fa.azurewebsites.net/api/distribution
+https://inlupp-fa.azurewebsites.net/api/downloads
+https://inlupp-fa.azurewebsites.net/api/messages
+https://inlupp-fa.azurewebsites.net/api/notifications
+https://inlupp-fa.azurewebsites.net/api/open-invoices
+https://inlupp-fa.azurewebsites.net/api/sales-report
+https://inlupp-fa.azurewebsites.net/api/tickets
+https://inlupp-fa.azurewebsites.net/api/total-growth
+https://inlupp-fa.azurewebsites.net/api/total-orders
+https://inlupp-fa.azurewebsites.net/api/total-projects
+https://inlupp-fa.azurewebsites.net/api/total-purchases
+https://inlupp-fa.azurewebsites.net/api/total-sales
+https://inlupp-fa.azurewebsites.net/api/total-sales-chart
+https://inlupp-fa.azurewebsites.net/api/total-users
+https://inlupp-fa.azurewebsites.net/api/updates
+https://inlupp-fa.azurewebsites.net/api/users
+
+OBS! vissa av api-länkarna kanske inte funkar. Hittar man en sån så kontakta Hans så fixar han dem.
+>>>>>>> d9614757649e5817e2589de286c677c3cf03a6fc
