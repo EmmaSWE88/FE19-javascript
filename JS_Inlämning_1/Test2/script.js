@@ -132,7 +132,6 @@ $(function(){
         validatePass() && 
         inCheck() && 
         radioCheck()) {
-            console.log('aaaaa')
             window.location.replace('index2.html')
         } else {
             return(false)
