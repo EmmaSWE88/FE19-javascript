@@ -67,16 +67,15 @@
 
 
 // })
-function getUserName() {
+function helloUserName() {
     let firstname = 'Emma'
     let lastname = 'Norling'
 
     fetch(`https://inlupp-fa.azurewebsites.net/api/users?firstname=${firstname}&lastname=${lastname}`)
     .then((res) => res.text())
     .then(data => {
-        let fullname = [0]
-        let welcomeName = fullname.splice()
         document.getElementById('welcomeUser').innerText = data;
+        document.getElementById('userProfileName').innerText = data;
     });
 
 }
@@ -98,5 +97,5 @@ function getUserName() {
 // console.log(totalSales.currency);
 // console.log(totalSales.amount);
 
-getUserName();
+helloUserName();
 
