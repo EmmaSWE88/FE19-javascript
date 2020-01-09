@@ -20,50 +20,83 @@
 /* ======================================================================= */
 /* USERS START */ 
 
-let userProfileName = document.getElementById('userProfileName');
-let welcomeUser = document.getElementById('welcomeUser');
+// let userProfileName = document.getElementById('userProfileName');
+// let welcomeUser = document.getElementById('welcomeUser');
 
-function getFullName(firstname, lastname) {
+// function getFullName(firstname, lastname) {
+//     fetch(`https://inlupp-fa.azurewebsites.net/api/users?firstname=${firstname}&lastname=${lastname}`)
+//     .then(res => res.text())
+//     .then(data => {
+//         // Check browser support
+//     if (typeof(Storage) !== "undefined") {
+//     // Store
+//     localStorage.setItem("firstname", "Emma");
+//     localStorage.setItem("lastname", "Smith");
+//     // Retrieve
+//     document.getElementById("userProfileName").innerHTML = localStorage.getItem("lastname");
+//     document.getElementById("userProfileName").innerHTML = localStorage.getItem("firstname");
+//   } else {
+//     document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+//   }
+// })
+
+// getFullName('Hans', 'ML');
+
+
+// } //END function getFullName
+
+// /* ======================================================================= */
+// /* MESSAGES START */ 
+
+// const messages = document.getElementById('messageOne');
+
+// fetch('https://inlupp-fa.azurewebsites.net/api/messages')
+// .then(res => res.json())
+// .then(data => {
+
+//     for(message of data) {
+
+//         messages.insertAdjacentHTML('afterbegin', `
+//             <a>
+//                 <p>The meeting is NOT cancelled.</p>
+//                 <p>${message.title}</p>
+//             </a>
+//         `); 
+
+//     }
+
+
+// })
+function getUserName() {
+    let firstname = 'Emma'
+    let lastname = 'Norling'
+
     fetch(`https://inlupp-fa.azurewebsites.net/api/users?firstname=${firstname}&lastname=${lastname}`)
-    .then(res => res.text())
+    .then((res) => res.text())
     .then(data => {
-        // Check browser support
-    if (typeof(Storage) !== "undefined") {
-    // Store
-    localStorage.setItem("firstname", "Emma");
-    localStorage.setItem("lastname", "Smith");
-    // Retrieve
-    document.getElementById("userProfileName").innerHTML = localStorage.getItem("lastname");
-    document.getElementById("userProfileName").innerHTML = localStorage.getItem("firstname");
-  } else {
-    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
-  }
-})
+        let fullname = [0]
+        let welcomeName = fullname.splice()
+        document.getElementById('welcomeUser').innerText = data;
+    });
 
-getFullName('Hans', 'ML');
+}
 
 
-} //END function getFullName
+// function getTotalSales(){ //kör på den här varianten tex
+//     fetch(`https://inlupp-fa.azurewebsites.net/api/total-sales`)
+//     .then(res => res.json())
+//     .then(data => {
+//         console.log(data)
+//         localStorage.setItem('totalSales', data)
 
-/* ======================================================================= */
-/* MESSAGES START */ 
+//         //här gör jag det jag vill göra (relaterat till uppgiften bland annat)
+//     }) 
 
-const messages = document.getElementById('messageOne');
+// }
 
-fetch('https://inlupp-fa.azurewebsites.net/api/messages')
-.then(res => res.json())
-.then(data => {
+// let totalSales = JSON.parse(localStorage.getItem('totalSales'));
+// console.log(totalSales.currency);
+// console.log(totalSales.amount);
 
-    for(message of data) {
+getUserName();
 
-        messages.insertAdjacentHTML('afterbegin', `
-            <a>
-                <p>The meeting is NOT cancelled.</p>
-                <p>${message.title}</p>
-            </a>
-        `); 
-
-    }
-
-
-})
