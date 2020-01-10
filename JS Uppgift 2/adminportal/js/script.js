@@ -80,22 +80,32 @@ function helloUserName() {
 
 }
 
+function getTotalUsers(){ 
+    fetch(`https://inlupp-fa.azurewebsites.net/api/total-users`)
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+        localStorage.setItem('users-chart', data)
+        document.getElementById('users-chart', data)
+    }) 
 
-// function getTotalSales(){ //kör på den här varianten tex
-//     fetch(`https://inlupp-fa.azurewebsites.net/api/total-sales`)
-//     .then(res => res.json())
-//     .then(data => {
-//         console.log(data)
-//         localStorage.setItem('totalSales', data)
+}
 
-//         //här gör jag det jag vill göra (relaterat till uppgiften bland annat)
-//     }) 
+function getTotalSales(){ //kör på den här varianten tex
+    fetch(`https://inlupp-fa.azurewebsites.net/api/total-sales`)
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+        localStorage.setItem('totalSales', data)
 
-// }
+        //här gör jag det jag vill göra (relaterat till uppgiften bland annat)
+    }) 
 
-// let totalSales = JSON.parse(localStorage.getItem('totalSales'));
-// console.log(totalSales.currency);
-// console.log(totalSales.amount);
+}
+
+let totalSales = JSON.parse(localStorage.getItem('totalSales'));
+console.log(totalSales.currency);
+console.log(totalSales.amount);
 
 helloUserName();
-
+getTotalUsers()
