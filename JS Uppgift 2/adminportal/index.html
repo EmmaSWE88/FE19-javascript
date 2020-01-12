@@ -23,22 +23,23 @@
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
                   <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
                   <!--MESSAGES 1 START-->
-                  <a  id="messageOne" class="dropdown-item preview-item">
+                  <div id="messages">
+                   <!-- <a  id="messageOne" class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
                         <img src="https://via.placeholder.com/36x36" alt="image" class="profile-pic">
                     </div>
-                    <div class="preview-item-content flex-grow">
-                      <h6 class="preview-subject ellipsis font-weight-normal">David Grey
+                    <div class="preview-item-content flex-grow message-box">
+                      <h6 class="preview-subject ellipsis font-weight-normal">
                       </h6>
                       <p class="font-weight-light small-text text-muted mb-0">
-                        The meeting is cancelled
+                        
                       </p>
                     </div>
-                  </a>
+                  </a> -->
                   <!--MESSAGES 1 END-->
 
                   <!--MESSAGES 2 START-->
-                  <a class="dropdown-item preview-item">
+                  <!-- <a id="messageTwo" class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
                         <img src="https://via.placeholder.com/36x36" alt="image" class="profile-pic">
                     </div>
@@ -49,11 +50,11 @@
                         New product launch
                       </p>
                     </div>
-                  </a>
+                  </a> -->
                   <!--MESSAGES 2 END-->
 
                   <!--MESSAGES 3 START-->
-                  <a class="dropdown-item preview-item">
+                  <!-- <a class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
                         <img src="https://via.placeholder.com/36x36" alt="image" class="profile-pic">
                     </div>
@@ -64,9 +65,10 @@
                         Upcoming board meeting
                       </p>
                     </div>
-                  </a>
+                  </a> -->
                   <!--MESSAGES 3 END-->
                 </div>
+              </div>
               </li>
               <li class="nav-item dropdown mr-4">
                 <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-toggle="dropdown">
@@ -74,18 +76,20 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
                   <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
-                  <a class="dropdown-item preview-item">
+                  <div id="notification-box">
+                    
+                      <a class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
                       <div class="preview-icon bg-success">
                         <i class="mdi mdi-information mx-0"></i>
                       </div>
                     </div>
-                    <div class="preview-item-content">
-                      <h6 class="preview-subject font-weight-normal">Application Error</h6>
+                   <div class="preview-item-content">
+                     <!--  <h6 class="preview-subject font-weight-normal">Application Error</h6>
                       <p class="font-weight-light small-text mb-0 text-muted">
                         Just now
-                      </p>
-                    </div>
+                      </p>-->
+                    </div> 
                   </a>
                   <a class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
@@ -93,11 +97,11 @@
                         <i class="mdi mdi-settings mx-0"></i>
                       </div>
                     </div>
-                    <div class="preview-item-content">
-                      <h6 class="preview-subject font-weight-normal">Settings</h6>
+                   <div class="preview-item-content">
+                      <!-- <h6 class="preview-subject font-weight-normal">Settings</h6>
                       <p class="font-weight-light small-text mb-0 text-muted">
                         Private message
-                      </p>
+                      </p> -->
                     </div>
                   </a>
                   <a class="dropdown-item preview-item">
@@ -106,19 +110,21 @@
                         <i class="mdi mdi-account-box mx-0"></i>
                       </div>
                     </div>
-                    <div class="preview-item-content">
-                      <h6 class="preview-subject font-weight-normal">New user registration</h6>
+                   <div class="preview-item-content">
+                     <!-- <h6 class="preview-subject font-weight-normal">New user registration</h6>
                       <p class="font-weight-light small-text mb-0 text-muted">
                         2 days ago
-                      </p>
-                    </div>
-                  </a>
+                      </p> -->
+                    </div> 
+                  </a> 
+                    
+                  </div>
                 </div>
               </li>
               <li class="nav-item nav-profile dropdown mr-0 mr-sm-2">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
                   <img src="https://via.placeholder.com/40x40" alt="profile"/>
-                  <span id="userProfileName"class="nav-profile-name">Don Richards</span>
+                  <span id="userProfileName"class="nav-profile-name"></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
                   <a class="dropdown-item">
@@ -160,7 +166,7 @@
                     <div class="card-body">
                       <p class="card-title">Users</p>
                       <div class="d-flex flex-wrap align-items-baseline">
-                          <h2 class="mr-3">33,956</h2>
+                          <h2 id="userNumber" class="mr-3"> <!--33,956 --> </h2>
                           <i class="mdi mdi-arrow-up mr-1 text-danger"></i><span><p class="mb-0 text-danger font-weight-medium">+2.12%</p></span>
                       </div>
                       <p class="mb-0 text-muted">Total users world wide</p>

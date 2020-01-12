@@ -80,32 +80,89 @@ function helloUserName() {
 
 }
 
-function getTotalUsers(){ 
-    fetch(`https://inlupp-fa.azurewebsites.net/api/total-users`)
-    .then(res => res.json())
-    .then(data => {
-        console.log(data)
-        localStorage.setItem('users-chart', data)
-        document.getElementById('users-chart', data)
-    }) 
+fetch('http://inlupp-fa.azurewebsites.net/api/messages')
+.then(res => res.json())
+.then(data => {
 
-}
+    for(message of data) {
 
-function getTotalSales(){ //kör på den här varianten tex
-    fetch(`https://inlupp-fa.azurewebsites.net/api/total-sales`)
-    .then(res => res.json())
-    .then(data => {
-        console.log(data)
-        localStorage.setItem('totalSales', data)
+        messages.insertAdjacentHTML('beforeend', `
+        <a class="dropdown-item preview-item">
+        <div class="preview-thumbnail">
+            <img src="https://via.placeholder.com/36x36" alt="image" class="profile-pic">
+        </div>
+        <div class="preview-item-content flex-grow message-box">
+          <h6 class="preview-subject ellipsis font-weight-normal"> ${message.from}
+          </h6>
+          <p class="font-weight-light small-text text-muted mb-0">
+            ${message.title}
+          </p>
+        </div>
+      </a> 
+        `); 
 
-        //här gör jag det jag vill göra (relaterat till uppgiften bland annat)
-    }) 
+    }
+})
 
-}
 
-let totalSales = JSON.parse(localStorage.getItem('totalSales'));
-console.log(totalSales.currency);
-console.log(totalSales.amount);
+
+fetch('https://inlupp-fa.azurewebsites.net/api/notifications')
+.then(res => res.json())
+.then(data => {
+
+    for(message of data) {
+        let notes = document.querySelectorAll('.preview-item-content');
+        notes.insertAdjacentHTML('beforeend', `
+          <h6 class="preview-subject font-weight-normal">${message.title}</h6>
+          <p class="font-weight-light small-text mb-0 text-muted">
+          ${message.subtitle}
+          </p>
+        
+      
+        `); 
+
+    }
+     
+       
+})
+
+
+// function getTotalUsers(){ 
+//     fetch(`https://inlupp-fa.azurewebsites.net/api/total-users`)
+//     .then(res => res.json())
+//     .then(data => {
+//         // localStorage.setItem('users-chart', data)
+//             //document.getElementById('userNumber').innerHTML = 
+//              let output = ${users}
+//             data.forEach(function(userNumber){
+//             ${users} += `
+             
+//             `;
+//             });
+//             document.getElementById('userNumber').innerHTML = output;
+         
+        
+        
+//     })
+// }
+
+// function getTotalSales(){ //kör på den här varianten tex
+//     fetch(`https://inlupp-fa.azurewebsites.net/api/total-sales`)
+//     .then(res => res.json())
+//     .then(data => {
+//         console.log(data)
+//         localStorage.setItem('totalSales', data)
+
+//         //här gör jag det jag vill göra (relaterat till uppgiften bland annat)
+//     }) 
+
+// }
+
+// let totalSales = JSON.parse(localStorage.getItem('totalSales'));
+// console.log(totalSales.currency);
+// console.log(totalSales.amount);
 
 helloUserName();
-getTotalUsers()
+
+
+//getTotalUsers()
