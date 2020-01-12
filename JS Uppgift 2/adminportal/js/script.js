@@ -108,76 +108,156 @@ fetch('http://inlupp-fa.azurewebsites.net/api/messages')
 })
 
 //NOTIFICATIONS
-function getNotificationMessages(){
-const notifications = document.querySelectorAll('.notification-content');
 fetch('https://inlupp-fa.azurewebsites.net/api/notifications')
-.then(res => res.json())
-.then(data => {
-    
-    for(note of data) {
-        
-        notifications.insertAdjacentHTML('beforeend',
-         `
-         <h6 class="preview-subject font-weight-normal">${note.title}</h6>
-        <p class="font-weight-light small-text mb-0 text-muted">${note.subtitle}</p>
-        `);
-    }
-    
-    
-}) //END of Notifications fetchen
-} //END of getNotificationsMessages function
+    .then(res => res.json())
+    .then(data => {
+      
+      for(let i = 0; i < data.length ; i++){
+        notifications.insertAdjacentHTML('beforeend', `
+        <a class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                      <div class="preview-icon bg-success">
+                        <i class="mdi mdi-information mx-0"></i>
+                      </div>
+                    </div>
+                    <div class="preview-item-content">
+                      <h6 class="preview-subject font-weight-normal">${data[i].title}</h6>
+                      <p class="font-weight-light small-text mb-0 text-muted">
+                      ${data[i].subtitle}
+                      </p>
+                    </div>
+                  </a>
+    `);
+      }
+    })
 
 //TOTAL USERS
 fetch('https://inlupp-fa.azurewebsites.net/api/total-users')
-.then(res => res.json())
-.then(data => {
-    // for() {
+    .then(res => res.json())
+    .then(userData => {
+ 
+      document.querySelector('#totalUsers').innerHTML = userData.users.toLocaleString('en-US');
+      document.querySelector('#totalUserPercent').innerHTML = userData.growth + '%';
+ 
+    //from dashboard file 
+    if ($("#users-chart").length) {
+ 
+      var areaData = { //because two small arrays
+        labels: userData.dataset.labels,
+        datasets: [{
+            data: userData.dataset.data,
+            backgroundColor: [
+              '#e0fff4'
+            ],
+            borderWidth: 2,
+            borderColor: "#00c689",
+            fill: 'origin',
+            label: "purchases"
+          }
+        ]
+      };
+      
+      var areaOptions = {
+        responsive: true,
+        maintainAspectRatio: true,
+        plugins: {
+          filler: {
+            propagate: false
+          }
+        },
+        scales: {
+          xAxes: [{
+            display: false,
+            ticks: {
+              display: true
+            },
+            gridLines: {
+              display: false,
+              drawBorder: false,
+              color: 'transparent',
+              zeroLineColor: '#eeeeee'
+            }
+          }],
+          yAxes: [{
+            display: false,
+            ticks: {
+              display: true,
+              autoSkip: false,
+              maxRotation: 0,
+              stepSize: 100,
+              min: 0,
+              max: 300
+            },
+            gridLines: {
+              drawBorder: false
+            }
+          }]
+        },
+        legend: {
+          display: false
+        },
+        tooltips: {
+          enabled: true
+        },
+        elements: {
+          line: {
+            tension: .35
+          },
+          point: {
+            radius: 0
+          }
+        }
+      }
+      var salesChartCanvas = $("#users-chart").get(0).getContext("2d");
+      var salesChart = new Chart(salesChartCanvas, {
+        type: 'line',
+        data: areaData,
+        options: areaOptions
+      });
+    }
+  })
 
-    // }
-})
+// //TOTAL DOWNLOADS
+// function getTotalOfflineDownloads(){
 
+// const offlineProgress = document.getElementById('offlineProgress');
+// const offlineTotalDownloads = document.getElementById('offlineTotalDownloads');
 
-//TOTAL DOWNLOADS
-function getTotalOfflineDownloads(){
+// fetch('https://inlupp-fa.azurewebsites.net/api/downloads')
+// .then(res => res.json())
+// .then(data => {
 
-const offlineProgress = document.getElementById('offlineProgress');
-const offlineTotalDownloads = document.getElementById('offlineTotalDownloads');
+//     for(message of data) {
 
-fetch('https://inlupp-fa.azurewebsites.net/api/downloads')
-.then(res => res.json())
-.then(data => {
-
-    for(message of data) {
-
-        offlineProgress.insertAdjacentHTML('beforeend', `${message.circleValue}`)
-        offlineTotalDownloads.insertAdjacentHTML('beforeend', `
-        <h2>${message.offlineAmount}</h2>
-        `); 
+//         offlineProgress.insertAdjacentHTML('beforeend', `${message.circleValue}`)
+//         offlineTotalDownloads.insertAdjacentHTML('beforeend', `
+//         <h2>${message.offlineAmount}</h2>
+//         `); 
 
 
 
-    }    
-    //document.getElementById('offlineTotalDownloads').innerHTML = ${amount.offlineAmount};
-   console.log(data);
+//     }    
+//     //document.getElementById('offlineTotalDownloads').innerHTML = ${amount.offlineAmount};
+//    console.log(data);
    
     
-}) //END of offline download fetchen
-} //END of offline function
+// }) //END of offline download fetchen
+// } //END of offline function
 
-function getTotalSales(){ 
-    fetch(`https://inlupp-fa.azurewebsites.net/api/total-sales`)
-    .then(res => res.json())
-    .then(data => {
+// function getTotalSales(){ 
+//     fetch(`https://inlupp-fa.azurewebsites.net/api/total-sales`)
+//     .then(res => res.json())
+//     .then(data => {
         
 
         
-    }) 
+//     }) 
 
-}
-let totalUsers = JSON.parse(localStorage.getItem('totalUsers'));
+// }
+// let totalUsers = JSON.parse(localStorage.getItem('totalUsers'));
 
 
 helloUserName();
-getNotificationMessages();
-getTotalOfflineDownloads();
-getTotalSales();
+// getNotificationMessages();
+// getTotalOfflineDownloads();
+// getTotalSales();

@@ -110,153 +110,153 @@
       });
     }
 
-    if ($("#users-chart").length) {
-      var areaData = {
-        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
-        datasets: [{
-            data: [160, 105, 225, 140, 180, 61, 120, 60, 90],
-            backgroundColor: [
-              '#e0fff4'
-            ],
-            borderWidth: 2,
-            borderColor: "#00c689",
-            fill: 'origin',
-            label: "purchases"
-          }
-        ]
-      };
-      var areaOptions = {
-        responsive: true,
-        maintainAspectRatio: true,
-        plugins: {
-          filler: {
-            propagate: false
-          }
-        },
-        scales: {
-          xAxes: [{
-            display: false,
-            ticks: {
-              display: true
-            },
-            gridLines: {
-              display: false,
-              drawBorder: false,
-              color: 'transparent',
-              zeroLineColor: '#eeeeee'
-            }
-          }],
-          yAxes: [{
-            display: false,
-            ticks: {
-              display: true,
-              autoSkip: false,
-              maxRotation: 0,
-              stepSize: 100,
-              min: 0,
-              max: 300
-            },
-            gridLines: {
-              drawBorder: false
-            }
-          }]
-        },
-        legend: {
-          display: false
-        },
-        tooltips: {
-          enabled: true
-        },
-        elements: {
-          line: {
-            tension: .35
-          },
-          point: {
-            radius: 0
-          }
-        }
-      }
-      var salesChartCanvas = $("#users-chart").get(0).getContext("2d");
-      var salesChart = new Chart(salesChartCanvas, {
-        type: 'line',
-        data: areaData,
-        options: areaOptions
-      });
-    }
+    // if ($("#users-chart").length) {
+    //   var areaData = {
+    //     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
+    //     datasets: [{
+    //         data: [160, 105, 225, 140, 180, 61, 120, 60, 90],
+    //         backgroundColor: [
+    //           '#e0fff4'
+    //         ],
+    //         borderWidth: 2,
+    //         borderColor: "#00c689",
+    //         fill: 'origin',
+    //         label: "purchases"
+    //       }
+    //     ]
+    //   };
+    //   var areaOptions = {
+    //     responsive: true,
+    //     maintainAspectRatio: true,
+    //     plugins: {
+    //       filler: {
+    //         propagate: false
+    //       }
+    //     },
+    //     scales: {
+    //       xAxes: [{
+    //         display: false,
+    //         ticks: {
+    //           display: true
+    //         },
+    //         gridLines: {
+    //           display: false,
+    //           drawBorder: false,
+    //           color: 'transparent',
+    //           zeroLineColor: '#eeeeee'
+    //         }
+    //       }],
+    //       yAxes: [{
+    //         display: false,
+    //         ticks: {
+    //           display: true,
+    //           autoSkip: false,
+    //           maxRotation: 0,
+    //           stepSize: 100,
+    //           min: 0,
+    //           max: 300
+    //         },
+    //         gridLines: {
+    //           drawBorder: false
+    //         }
+    //       }]
+    //     },
+    //     legend: {
+    //       display: false
+    //     },
+    //     tooltips: {
+    //       enabled: true
+    //     },
+    //     elements: {
+    //       line: {
+    //         tension: .35
+    //       },
+    //       point: {
+    //         radius: 0
+    //       }
+    //     }
+    //   }
+    //   var salesChartCanvas = $("#users-chart").get(0).getContext("2d");
+    //   var salesChart = new Chart(salesChartCanvas, {
+    //     type: 'line',
+    //     data: areaData,
+    //     options: areaOptions
+    //   });
+    // }
 
-    if ($("#users-chart-dark").length) {
-      var areaData = {
-        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
-        datasets: [{
-            data: [160, 105, 225, 140, 180, 61, 120, 60, 90],
-            backgroundColor: [
-              'rgba(0, 198, 137, .1)'
-            ],
-            borderWidth: 2,
-            borderColor: "#00c689",
-            fill: 'origin',
-            label: "purchases"
-          }
-        ]
-      };
-      var areaOptions = {
-        responsive: true,
-        maintainAspectRatio: true,
-        plugins: {
-          filler: {
-            propagate: false
-          }
-        },
-        scales: {
-          xAxes: [{
-            display: false,
-            ticks: {
-              display: true
-            },
-            gridLines: {
-              display: false,
-              drawBorder: false,
-              color: 'transparent',
-              zeroLineColor: '#eeeeee'
-            }
-          }],
-          yAxes: [{
-            display: false,
-            ticks: {
-              display: true,
-              autoSkip: false,
-              maxRotation: 0,
-              stepSize: 100,
-              min: 0,
-              max: 300
-            },
-            gridLines: {
-              drawBorder: false
-            }
-          }]
-        },
-        legend: {
-          display: false
-        },
-        tooltips: {
-          enabled: true
-        },
-        elements: {
-          line: {
-            tension: .35
-          },
-          point: {
-            radius: 0
-          }
-        }
-      }
-      var salesChartCanvas = $("#users-chart-dark").get(0).getContext("2d");
-      var salesChart = new Chart(salesChartCanvas, {
-        type: 'line',
-        data: areaData,
-        options: areaOptions
-      });
-    }
+    // if ($("#users-chart-dark").length) {
+    //   var areaData = {
+    //     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
+    //     datasets: [{
+    //         data: [160, 105, 225, 140, 180, 61, 120, 60, 90],
+    //         backgroundColor: [
+    //           'rgba(0, 198, 137, .1)'
+    //         ],
+    //         borderWidth: 2,
+    //         borderColor: "#00c689",
+    //         fill: 'origin',
+    //         label: "purchases"
+    //       }
+    //     ]
+    //   };
+    //   var areaOptions = {
+    //     responsive: true,
+    //     maintainAspectRatio: true,
+    //     plugins: {
+    //       filler: {
+    //         propagate: false
+    //       }
+    //     },
+    //     scales: {
+    //       xAxes: [{
+    //         display: false,
+    //         ticks: {
+    //           display: true
+    //         },
+    //         gridLines: {
+    //           display: false,
+    //           drawBorder: false,
+    //           color: 'transparent',
+    //           zeroLineColor: '#eeeeee'
+    //         }
+    //       }],
+    //       yAxes: [{
+    //         display: false,
+    //         ticks: {
+    //           display: true,
+    //           autoSkip: false,
+    //           maxRotation: 0,
+    //           stepSize: 100,
+    //           min: 0,
+    //           max: 300
+    //         },
+    //         gridLines: {
+    //           drawBorder: false
+    //         }
+    //       }]
+    //     },
+    //     legend: {
+    //       display: false
+    //     },
+    //     tooltips: {
+    //       enabled: true
+    //     },
+    //     elements: {
+    //       line: {
+    //         tension: .35
+    //       },
+    //       point: {
+    //         radius: 0
+    //       }
+    //     }
+    //   }
+    //   var salesChartCanvas = $("#users-chart-dark").get(0).getContext("2d");
+    //   var salesChart = new Chart(salesChartCanvas, {
+    //     type: 'line',
+    //     data: areaData,
+    //     options: areaOptions
+    //   });
+    // }
 
     if ($("#projects-chart").length) {
       var areaData = {
