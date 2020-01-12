@@ -108,12 +108,14 @@ fetch('http://inlupp-fa.azurewebsites.net/api/messages')
 })
 
 //NOTIFICATIONS
+function getNotificationMessages(){
+const notifications = document.querySelectorAll('.notification-content');
 fetch('https://inlupp-fa.azurewebsites.net/api/notifications')
 .then(res => res.json())
 .then(data => {
     
     for(note of data) {
-        let notifications = document.querySelectorAll('.notification-content');
+        
         notifications.insertAdjacentHTML('beforeend',
          `
          <h6 class="preview-subject font-weight-normal">${note.title}</h6>
@@ -122,12 +124,60 @@ fetch('https://inlupp-fa.azurewebsites.net/api/notifications')
     }
     
     
+}) //END of Notifications fetchen
+} //END of getNotificationsMessages function
+
+//TOTAL USERS
+fetch('https://inlupp-fa.azurewebsites.net/api/total-users')
+.then(res => res.json())
+.then(data => {
+    // for() {
+
+    // }
 })
 
 
+//TOTAL DOWNLOADS
+function getTotalOfflineDownloads(){
 
+const offlineProgress = document.getElementById('offlineProgress');
+const offlineTotalDownloads = document.getElementById('offlineTotalDownloads');
+
+fetch('https://inlupp-fa.azurewebsites.net/api/downloads')
+.then(res => res.json())
+.then(data => {
+
+    for(message of data) {
+
+        offlineProgress.insertAdjacentHTML('beforeend', `${message.circleValue}`)
+        offlineTotalDownloads.insertAdjacentHTML('beforeend', `
+        <h2>${message.offlineAmount}</h2>
+        `); 
+
+
+
+    }    
+    //document.getElementById('offlineTotalDownloads').innerHTML = ${amount.offlineAmount};
+   console.log(data);
+   
+    
+}) //END of offline download fetchen
+} //END of offline function
+
+function getTotalSales(){ 
+    fetch(`https://inlupp-fa.azurewebsites.net/api/total-sales`)
+    .then(res => res.json())
+    .then(data => {
+        
+
+        
+    }) 
+
+}
+let totalUsers = JSON.parse(localStorage.getItem('totalUsers'));
 
 
 helloUserName();
-
-
+getNotificationMessages();
+getTotalOfflineDownloads();
+getTotalSales();
