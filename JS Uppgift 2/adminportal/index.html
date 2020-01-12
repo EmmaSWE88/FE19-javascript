@@ -164,8 +164,8 @@
                   <div class="card">
                     <div class="card-body">
                       <p class="card-title">Users</p>
-                      <div id="totalUsers" class="d-flex flex-wrap align-items-baseline">
-                          <h2 class="mr-3"> <!--33,956--> </h2>
+                      <div class="d-flex flex-wrap align-items-baseline">
+                          <h2 id="totalUsers" class="mr-3"> <!--33,956--> </h2>
                           <i class="mdi mdi-arrow-up mr-1 text-danger"></i><span> <p id="totalUserPercent" class="mb-0 text-danger font-weight-medium"> <!-- +2.12% --> </p></span>
                       </div>
                       <p class="mb-0 text-muted">Total users world wide</p>
@@ -178,8 +178,8 @@
                     <div class="card-body">
                       <p class="card-title">Projects</p>
                       <div class="d-flex flex-wrap align-items-baseline">
-                        <h2 class="mr-3">50.36%</h2>
-                        <i class="mdi mdi-arrow-up mr-1 text-success"></i><span><p class="mb-0 text-success font-weight-medium">+9.12%</p></span>                          
+                        <h2 id="totalProjects" class="mr-3"><!--50.36% --></h2>
+                        <i class="mdi mdi-arrow-up mr-1 text-success"></i><span><p id="totalProjectsPercent" class="mb-0 text-success font-weight-medium"> <!--+9.12% --></p></span>                          
                       </div>
                       <p class="mb-0 text-muted">Total users world wide</p>
                     </div>
@@ -193,7 +193,7 @@
                     <div class="card-body">
                       <p class="card-title">Downloads</p>
                       <p class="text-muted mb-2">Watching ice melt. This is fun. Only you could make those words cute.</p>
-                      <div class="row mt-4">
+                      <div id="dowloadsInfo" class="row mt-4">
                         <div class="col-md-6 stretch-card">
                           <div class="row d-flex align-items-center">
                             <div class="col-6">
@@ -212,7 +212,7 @@
                             </div>
                             <div class="col-6 pl-0">
                               <p class="mb-0">Online</p>
-                              <h2>12,236</h2>
+                              <h2 id="onlineTotalDownloads"><!--12,236--></h2>
                             </div>
                           </div>
                         </div>
@@ -230,19 +230,19 @@
                   <div class="d-flex flex-wrap mb-4 mt-4 pb-4">
                     <div class="mr-4 mr-md-5">
                       <p class="mb-0">Revenue</p>
-                      <h4>13,956</h4>
+                      <h4 id="revenueNumbers"> <!--13,956--></h4>
                     </div>
                     <div class="mr-4 mr-md-5">
                       <p class="mb-0">Returns</p>
-                      <h4>27,219</h4>
+                      <h4 id="returnNumbers"> <!--27,219 --></h4>
                     </div>
                     <div class="mr-4 mr-md-5">
                       <p class="mb-0">Queries</p>
-                      <h4>03,386</h4>
+                      <h4 id="querieNumbers"><!--03,386 --></h4>
                     </div>
                     <div class="mr-4 mr-md-5">
                       <p class="mb-0">Invoices</p>
-                      <h4>04,739</h4>
+                      <h4 id="invoiceNumbers"><!--04,739--></h4>
                     </div>
                   </div>
                   <canvas id="total-sales-chart"></canvas>
@@ -261,7 +261,7 @@
                     <div class="text-white">
                       <p class="font-weight-medium mt-md-2 mt-xl-0 text-md-center text-xl-left">Total Sales</p>
                       <div class="d-flex flex-md-column flex-xl-row flex-wrap align-items-baseline align-items-md-center align-items-xl-baseline">
-                        <h3 class="mb-0 mb-md-1 mb-lg-0 mr-1">$508</h3>
+                        <h3 id="totalSalesNumber" class="mb-0 mb-md-1 mb-lg-0 mr-1"> <!-- $508--></h3>
                         <small class="mb-0">This month</small>
                       </div>
                     </div>
@@ -279,7 +279,7 @@
                     <div class="text-white">
                       <p class="font-weight-medium mt-md-2 mt-xl-0 text-md-center text-xl-left">Total Purchases</p>
                       <div class="d-flex flex-md-column flex-xl-row flex-wrap align-items-baseline align-items-md-center align-items-xl-baseline">
-                        <h3 class="mb-0 mb-md-1 mb-lg-0 mr-1">$387</h3>
+                        <h3 id="totalPurchasesNumber" class="mb-0 mb-md-1 mb-lg-0 mr-1"><!--$387--></h3>
                         <small class="mb-0">This month</small>
                       </div>
                     </div>
@@ -297,7 +297,7 @@
                     <div class="text-white">
                       <p class="font-weight-medium mt-md-2 mt-xl-0 text-md-center text-xl-left">Total Orders</p>
                       <div class="d-flex flex-md-column flex-xl-row flex-wrap align-items-baseline align-items-md-center align-items-xl-baseline">
-                        <h3 class="mb-0 mb-md-1 mb-lg-0 mr-1">$161</h3>
+                        <h3 id="totalOrdersNumbers" class="mb-0 mb-md-1 mb-lg-0 mr-1"><!--$161--></h3>
                         <small class="mb-0">This month</small>
                       </div>
                     </div>
@@ -315,7 +315,7 @@
                     <div class="text-white">
                       <p class="font-weight-medium mt-md-2 mt-xl-0 text-md-center text-xl-left">Total Growth</p>
                       <div class="d-flex flex-md-column flex-xl-row flex-wrap align-items-baseline align-items-md-center align-items-xl-baseline">
-                        <h3 class="mb-0 mb-md-1 mb-lg-0 mr-1">$231</h3>
+                        <h3 id="totalGrowthNumber" class="mb-0 mb-md-1 mb-lg-0 mr-1"><!--$231--></h3>
                         <small class="mb-0">This month</small>
                       </div>
                     </div>
