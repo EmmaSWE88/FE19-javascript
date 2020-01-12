@@ -67,6 +67,8 @@
 
 
 // })
+
+//USER NAMES - NAME DISPLAY
 function helloUserName() {
     let firstname = 'Emma'
     let lastname = 'Norling'
@@ -80,6 +82,7 @@ function helloUserName() {
 
 }
 
+//MESSAGES
 fetch('http://inlupp-fa.azurewebsites.net/api/messages')
 .then(res => res.json())
 .then(data => {
@@ -101,68 +104,30 @@ fetch('http://inlupp-fa.azurewebsites.net/api/messages')
       </a> 
         `); 
 
-    }
+    }    
 })
 
-
-
+//NOTIFICATIONS
 fetch('https://inlupp-fa.azurewebsites.net/api/notifications')
 .then(res => res.json())
 .then(data => {
-
-    for(message of data) {
-        let notes = document.querySelectorAll('.preview-item-content');
-        notes.insertAdjacentHTML('beforeend', `
-          <h6 class="preview-subject font-weight-normal">${message.title}</h6>
-          <p class="font-weight-light small-text mb-0 text-muted">
-          ${message.subtitle}
-          </p>
-        
-      
-        `); 
-
+    
+    for(note of data) {
+        let notifications = document.querySelectorAll('.notification-content');
+        notifications.insertAdjacentHTML('beforeend',
+         `
+         <h6 class="preview-subject font-weight-normal">${note.title}</h6>
+        <p class="font-weight-light small-text mb-0 text-muted">${note.subtitle}</p>
+        `);
     }
-     
-       
+    
+    
 })
 
 
-// function getTotalUsers(){ 
-//     fetch(`https://inlupp-fa.azurewebsites.net/api/total-users`)
-//     .then(res => res.json())
-//     .then(data => {
-//         // localStorage.setItem('users-chart', data)
-//             //document.getElementById('userNumber').innerHTML = 
-//              let output = ${users}
-//             data.forEach(function(userNumber){
-//             ${users} += `
-             
-//             `;
-//             });
-//             document.getElementById('userNumber').innerHTML = output;
-         
-        
-        
-//     })
-// }
 
-// function getTotalSales(){ //kör på den här varianten tex
-//     fetch(`https://inlupp-fa.azurewebsites.net/api/total-sales`)
-//     .then(res => res.json())
-//     .then(data => {
-//         console.log(data)
-//         localStorage.setItem('totalSales', data)
 
-//         //här gör jag det jag vill göra (relaterat till uppgiften bland annat)
-//     }) 
-
-// }
-
-// let totalSales = JSON.parse(localStorage.getItem('totalSales'));
-// console.log(totalSales.currency);
-// console.log(totalSales.amount);
 
 helloUserName();
 
 
-//getTotalUsers()
