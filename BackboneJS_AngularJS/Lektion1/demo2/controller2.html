@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demoApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script> 
+
+</head>
+<body>
+
+    <div ng-controller="homeController">
+        <ul>
+            <li ng-repeat="person in persons">
+                {{ person.firstName }} {{ person.lastName }}
+            </li>
+        </ul>  
+        
+        
+
+    </div>
+
+    <div ng-controller="aboutMeController">
+        <h4>{{ pageTitle }}</h4>
+
+        <input type="text" ng-model="myName" placeholder="Enter your name...">
+        <p style="color:red">{{myNameError(myName)}}</p>
+        <br>
+        <p>Your name is: {{ myName }}</p>
+
+    </div>
+
+
+    <script>      
+        angular.module("demoApp", [])
+        .controller("homeController", function($scope) {
+            $scope.firstName = "Hans";
+            $scope.persons = [
+                { firstName: "Hans", lastName: "Mattin-Lassei" },
+                { firstName: "Tommy", lastName: "Mattin-Lassei" },
+                { firstName: "Anki", lastName: "Mattin-Lassei" }
+            ]
+        })
+        .controller("aboutMeController", function($scope) {
+            $scope.pageTitle = "About Me";
+            $scope.myName = ""
+
+            $scope.myNameError = function(myName) {
+                if(myName.length < 2) {
+                    return "You must enter at least 2 characters."
+                }
+            }
+
+            
+
+
+        })
+
+    </script>
+    
+</body>
+</html>

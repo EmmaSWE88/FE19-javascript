@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demoApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script> 
+
+</head>
+<body>
+
+    <div ng-controller="homeController">
+      <!--  {{ firstName }} -->
+
+      <ul>
+          <li ng-repeat="person in persons">
+              {{person.firstName}}  {{person.lastName}}
+          </li>
+      </ul>
+    </div>
+
+<div ng-controller="aboutMeController">
+
+</div>
+
+<script>
+    let app = angular.module("demoApp", []);
+
+    app.controller("homeController", function($scope){
+        $scope.firstName = "Hans";
+        $scope.persons = [
+            {firstName: "Hans", lastName: "Mattin-Lassei"},
+            {firstName: "Tommy", lastName: "Mattin-Lassei"},
+            {firstName: "Anki", lastName: "Mattin-Lassei"}
+        ];
+        
+    });
+    
+
+
+</script>
+    
+</body>
+</html>
