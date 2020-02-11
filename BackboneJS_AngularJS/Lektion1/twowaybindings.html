@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    
+</head>
+<body>
+    
+    <input type="text" ng-model="firstName" placeholder="Ange ditt förnamn här...">
+    <input type="text" ng-model="lastName" placeholder="Ange ditt efternamn här...">
+    <br>
+    <p ng-bind="myName"></p>
+    <p ng-bind="firstName + ' ' + lastName"></p>
+
+    <p> Välkommen {{firstName + " " + lastName}}</p> 
+    <p> Välkommen {{firstName}} {{lastName}}</p>
+
+    <p>{{10 + 10}} </p>
+
+</body>
+</html>
