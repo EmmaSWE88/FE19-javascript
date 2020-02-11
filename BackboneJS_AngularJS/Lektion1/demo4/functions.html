@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demoApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+ 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script> 
+    <script src="angularjs.js"></script>
+
+</head>
+<body>
+
+    <div ng-controller="ratingController">
+        <table>
+            <thead>
+                <th>Product</th>
+                <th>Likes</th>
+                <th>Dislikes</th>
+                <th></th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Hasses Tuggummi</td>
+                    <td>{{likes}}</td>
+                    <td>{{dislikes}}</td>
+                    <td>
+                        <button ng-click="incrementLikes()">Like</button>
+                        <button ng-click="incrementDislikes()">Dislike</button>
+                        <button ng-click="increment('like')">Inc like</button>
+                        <button ng-click="increment('dislike')">Inc dislike</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+  
+
+    
+</body>
+</html>
