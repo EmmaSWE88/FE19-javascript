@@ -1,0 +1,31 @@
+/* COLORS */
+:root{
+    --dark: #3c88b5;
+    --primary: #1e6e9c;
+    --light: #b5d6ec;
+    --custom-text-purple: #5736B9; 
+    --custom-black: #000000; 
+    --custom-white: #ffffff;
+    --custom-text-white: #ffffff;
+}
+
+.navbar-dark-custom {
+   color: var(--custom-text-white);
+}
+
+.bg-dark-custom{
+    background-color: var(--custom-black);
+    color: var(--custom-text-white);
+}
+
+.bg-light-custom {
+    background-color: var(--custom-white);
+}
+
+.custom-text-color {
+    color: var(--custom-text-purple);
+}
+
+body {
+    background: url(images/film_bakgrund_2.jpg);
+}
