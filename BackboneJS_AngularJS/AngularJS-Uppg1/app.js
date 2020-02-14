@@ -3,7 +3,15 @@ var app = angular.module("demoApp", ["ngRoute"])
 app.config(function($routeProvider) {
     $routeProvider
     .when("/", { 
+        templateUrl: "views/index.html",
+        controller: "defaultController" 
+    })
+    .when("/about", { 
         templateUrl: "views/aboutus.html",
+        controller: "defaultController" 
+    })
+    .when("/contact", { 
+        templateUrl: "views/contactus.html",
         controller: "defaultController" 
     })
 })
