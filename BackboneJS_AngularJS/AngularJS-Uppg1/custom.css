@@ -1,8 +1,5 @@
 /* COLORS */
-:root{
-    --dark: #3c88b5;
-    --primary: #1e6e9c;
-    --light: #b5d6ec;
+:root{ 
     --custom-text-purple: #5736B9; 
     --custom-purple: #5736B9; 
     --custom-black: #000000; 
@@ -35,15 +32,23 @@
     color: var(--custom-text-purple);
 }
 
-.card-sub-title {
-    font-size: 0.7rem;
+/* BODY*/
+body {
+    background: url(images/film_bakgrund_2.jpg);
 }
+
+/* CUSTOM COMPONENTS */
+
+.card-sub-title {
+    font-size: 0.75rem;
+}
+
 .card-sub-text {
     font-size: 0.75rem;
     font-weight: 650;
 }
 
-
-body {
-    background: url(images/film_bakgrund_2.jpg);
+.custom-border {
+    border-color: var(--custom-purple);
+    border-radius: 10%;
 }
