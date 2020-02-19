@@ -4,7 +4,9 @@
     --primary: #1e6e9c;
     --light: #b5d6ec;
     --custom-text-purple: #5736B9; 
+    --custom-purple: #5736B9; 
     --custom-black: #000000; 
+    --custom-grey: #3d3a3a; 
     --custom-white: #ffffff;
     --custom-text-white: #ffffff;
 }
@@ -18,6 +20,13 @@
     color: var(--custom-text-white);
 }
 
+.bg-custom-grey {
+    background-color: var(--custom-grey);
+}
+.bg-custom-purple {
+    background-color: var(--custom-purple);
+}
+
 .bg-light-custom {
     background-color: var(--custom-white);
 }
@@ -25,6 +34,15 @@
 .custom-text-color {
     color: var(--custom-text-purple);
 }
+
+.card-sub-title {
+    font-size: 0.7rem;
+}
+.card-sub-text {
+    font-size: 0.75rem;
+    font-weight: 650;
+}
+
 
 body {
     background: url(images/film_bakgrund_2.jpg);
